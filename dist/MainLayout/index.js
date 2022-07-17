@@ -27,7 +27,8 @@ import useEventCallback from "use-event-callback";
 import useImpliedVideoRegions from "./use-implied-video-regions";
 import useKey from "use-key-hook";
 import { useSettings } from "../SettingsProvider";
-import { withHotKeys } from "react-hotkeys"; // import Fullscreen from "../Fullscreen"
+import { withHotKeys } from "react-hotkeys";
+import DocumentTypesSideBarBox from "../DocumentTypesSideBarBox"; // import Fullscreen from "../Fullscreen"
 
 var emptyArr = [];
 var theme = createTheme();
@@ -64,6 +65,8 @@ export var MainLayout = function MainLayout(_ref3) {
       alwaysShowPrevButton = _ref3$alwaysShowPrevB === void 0 ? false : _ref3$alwaysShowPrevB,
       RegionEditLabel = _ref3.RegionEditLabel,
       onRegionClassAdded = _ref3.onRegionClassAdded,
+      onSelectDocumentTypes = _ref3.onSelectDocumentTypes,
+      documentTypes = _ref3.documentTypes,
       hideHeader = _ref3.hideHeader,
       hideHeaderText = _ref3.hideHeaderText,
       _ref3$hideNext = _ref3.hideNext,
@@ -338,6 +341,9 @@ export var MainLayout = function MainLayout(_ref3) {
     }), React.createElement(HistorySidebarBox, {
       history: state.history,
       onRestoreHistory: action("RESTORE_HISTORY")
+    }), React.createElement(DocumentTypesSideBarBox, {
+      documentTypes: documentTypes || ['Doc type 1', 'Doc type 2'],
+      onSelectDocumentTypes: onSelectDocumentTypes
     })].filter(Boolean)
   }, canvas), React.createElement(SettingsDialog, {
     open: state.settingsOpen,

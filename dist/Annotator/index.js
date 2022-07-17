@@ -44,6 +44,8 @@ export var Annotator = function Annotator(_ref) {
       videoTime = _ref$videoTime === void 0 ? 0 : _ref$videoTime,
       videoName = _ref.videoName,
       onExit = _ref.onExit,
+      onSelectDocumentTypes = _ref.onSelectDocumentTypes,
+      documentTypes = _ref.documentTypes,
       onNextImage = _ref.onNextImage,
       onPrevImage = _ref.onPrevImage,
       keypointDefinitions = _ref.keypointDefinitions,
@@ -147,7 +149,9 @@ export var Annotator = function Annotator(_ref) {
     hideClone: hideClone,
     hideSettings: hideSettings,
     hideFullScreen: hideFullScreen,
-    hideSave: hideSave
+    hideSave: hideSave,
+    documentTypes: documentTypes,
+    onSelectDocumentTypes: onSelectDocumentTypes
   }));
 };
 export default Annotator;
