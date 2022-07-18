@@ -45,6 +45,8 @@ export var Annotator = function Annotator(_ref) {
       videoName = _ref.videoName,
       onExit = _ref.onExit,
       onSelectDocumentTypes = _ref.onSelectDocumentTypes,
+      onSaveAsDraf = _ref.onSaveAsDraf,
+      currentDocumentType = _ref.currentDocumentType,
       documentTypes = _ref.documentTypes,
       onNextImage = _ref.onNextImage,
       onPrevImage = _ref.onPrevImage,
@@ -111,6 +113,8 @@ export var Annotator = function Annotator(_ref) {
     if (action.type === "HEADER_BUTTON_CLICKED") {
       if (["Exit", "Done", "Save", "Complete"].includes(action.buttonName)) {
         return onExit(without(state, "history"));
+      } else if (action.buttonName === "Save as Draf") {
+        return onSaveAsDraf(without(state, "history"));
       } else if (action.buttonName === "Next" && onNextImage) {
         return onNextImage(without(state, "history"));
       } else if (action.buttonName === "Prev" && onPrevImage) {
@@ -151,6 +155,7 @@ export var Annotator = function Annotator(_ref) {
     hideFullScreen: hideFullScreen,
     hideSave: hideSave,
     documentTypes: documentTypes,
+    currentDocumentType: currentDocumentType,
     onSelectDocumentTypes: onSelectDocumentTypes
   }));
 };

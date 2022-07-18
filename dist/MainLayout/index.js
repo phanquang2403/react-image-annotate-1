@@ -67,6 +67,7 @@ export var MainLayout = function MainLayout(_ref3) {
       onRegionClassAdded = _ref3.onRegionClassAdded,
       onSelectDocumentTypes = _ref3.onSelectDocumentTypes,
       documentTypes = _ref3.documentTypes,
+      currentDocumentType = _ref3.currentDocumentType,
       hideHeader = _ref3.hideHeader,
       hideHeaderText = _ref3.hideHeaderText,
       _ref3$hideNext = _ref3.hideNext,
@@ -243,6 +244,8 @@ export var MainLayout = function MainLayout(_ref3) {
       name: "Prev"
     }, !hideNext && {
       name: "Next"
+    }, {
+      name: 'Save as Draf'
     }, state.annotationType !== "video" ? null : !state.videoPlaying ? {
       name: "Play"
     } : {
@@ -343,7 +346,8 @@ export var MainLayout = function MainLayout(_ref3) {
       onRestoreHistory: action("RESTORE_HISTORY")
     }), React.createElement(DocumentTypesSideBarBox, {
       documentTypes: documentTypes || ['Doc type 1', 'Doc type 2'],
-      onSelectDocumentTypes: onSelectDocumentTypes
+      onSelectDocumentTypes: onSelectDocumentTypes,
+      currentDocumentType: currentDocumentType
     })].filter(Boolean)
   }, canvas), React.createElement(SettingsDialog, {
     open: state.settingsOpen,

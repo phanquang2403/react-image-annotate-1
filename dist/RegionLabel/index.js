@@ -33,7 +33,7 @@ export var RegionLabel = function RegionLabel(_ref) {
 
   var onCommentInputClick = function onCommentInputClick(_) {
     // The TextField wraps the <input> tag with two divs
-    var commentInput = commentInputRef.current.children[0].children[0];
+    var commentInput = commentInputRef.current;
     if (commentInput) return commentInput.focus();
   };
 
@@ -153,11 +153,16 @@ export var RegionLabel = function RegionLabel(_ref) {
         label: c
       };
     }))
-  })), allowComments && React.createElement(TextField, {
-    InputProps: {
-      className: classes.commentBox
+  })), allowComments && React.createElement("input", {
+    style: {
+      width: '89%',
+      padding: 10,
+      marginTop: 5,
+      borderColor: 'hsl(0,0%,80%)',
+      borderRadius: 5,
+      borderWidth: 1
     },
-    fullWidth: true,
+    className: "input_region_label",
     multiline: true,
     rows: 3,
     ref: commentInputRef,
