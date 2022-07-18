@@ -32,6 +32,7 @@ const listItemTextStyle = { paddingLeft: 16 }
 export const DocumentTypesSideBarBox = ({
   documentTypes,
   onSelectDocumentTypes,
+  currentDocumentType,
 }) => {
   const classes = useStyles()
 
@@ -44,8 +45,8 @@ export const DocumentTypesSideBarBox = ({
       >
         <List>
           {documentTypes?.map((item, index) => (
-            <div key={index} style={{padding:10}} onClick={() => onSelectDocumentTypes(item.id)}>
-              {item.name}
+            <div className={currentDocumentType === item.id ?'document-selected':''} key={index} style={{padding:10}} onClick={() => onSelectDocumentTypes(item?.id)}>
+              {item?.name}
             </div>
           ))}
         </List>

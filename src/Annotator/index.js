@@ -40,6 +40,7 @@ type Props = {
   onExit: (MainLayoutState) => any,
   onSelectDocumentTypes: (type: string) => any,
   onSaveAsDraf: (e: any) => any,
+  currentDocumentType:any,
   documentTypes: any,
   videoTime?: number,
   videoSrc?: string,
@@ -91,6 +92,7 @@ export const Annotator = ({
   onExit,
   onSelectDocumentTypes,
   onSaveAsDraf,
+  currentDocumentType,
   documentTypes,
   onNextImage,
   onPrevImage,
@@ -209,6 +211,7 @@ export const Annotator = ({
         hideFullScreen={hideFullScreen}
         hideSave={hideSave}
         documentTypes={documentTypes}
+        currentDocumentType={currentDocumentType}
         onSelectDocumentTypes={onSelectDocumentTypes}
       />
     </SettingsProvider>

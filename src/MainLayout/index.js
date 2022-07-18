@@ -74,6 +74,7 @@ export const MainLayout = ({
   onRegionClassAdded,
   onSelectDocumentTypes,
   documentTypes,
+  currentDocumentType,
   hideHeader,
   hideHeaderText,
   hideNext = false,
@@ -401,7 +402,7 @@ return (
                 history={state.history}
                 onRestoreHistory={action("RESTORE_HISTORY")}
               />,
-              <DocumentTypesSideBarBox documentTypes={documentTypes || ['Doc type 1', 'Doc type 2']} onSelectDocumentTypes={onSelectDocumentTypes} />
+              <DocumentTypesSideBarBox documentTypes={documentTypes || ['Doc type 1', 'Doc type 2']} onSelectDocumentTypes={onSelectDocumentTypes} currentDocumentType={currentDocumentType} />
             ].filter(Boolean)}
           >
             {canvas}
