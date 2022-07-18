@@ -51,8 +51,7 @@ export const RegionLabel = ({
   const commentInputRef = useRef(null)
   const onCommentInputClick = (_) => {
     // The TextField wraps the <input> tag with two divs
-    const commentInput = commentInputRef.current.children[0].children[0]
-
+    const commentInput = commentInputRef.current
     if (commentInput) return commentInput.focus()
   }
 
@@ -158,11 +157,9 @@ export const RegionLabel = ({
               </div>
             )}
             {allowComments && (
-              <TextField
-                InputProps={{
-                  className: classes.commentBox,
-                }}
-                fullWidth
+              <input
+                style={{ width: '89%' ,padding:10,marginTop:5,borderColor:'hsl(0,0%,80%)',borderRadius:5,borderWidth:1}}
+                className="input_region_label"
                 multiline
                 rows={3}
                 ref={commentInputRef}
