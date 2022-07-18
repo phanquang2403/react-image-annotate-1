@@ -357,6 +357,7 @@ return (
               debugModeOn && (
                 <DebugBox state={debugModeOn} lastAction={state.lastAction} />
               ),
+              <DocumentTypesSideBarBox documentTypes={documentTypes || ['Doc type 1', 'Doc type 2']} onSelectDocumentTypes={onSelectDocumentTypes} currentDocumentType={currentDocumentType} />,
               state.taskDescription && (
                 <TaskDescription description={state.taskDescription} />
               ),
@@ -402,7 +403,7 @@ return (
                 history={state.history}
                 onRestoreHistory={action("RESTORE_HISTORY")}
               />,
-              <DocumentTypesSideBarBox documentTypes={documentTypes || ['Doc type 1', 'Doc type 2']} onSelectDocumentTypes={onSelectDocumentTypes} currentDocumentType={currentDocumentType} />
+            
             ].filter(Boolean)}
           >
             {canvas}
