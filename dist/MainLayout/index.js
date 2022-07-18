@@ -244,7 +244,7 @@ export var MainLayout = function MainLayout(_ref3) {
       name: "Prev"
     }, !hideNext && {
       name: "Next"
-    }, {
+    }, !hideSave && {
       name: 'Save as Draf'
     }, state.annotationType !== "video" ? null : !state.videoPlaying ? {
       name: "Play"
@@ -259,7 +259,7 @@ export var MainLayout = function MainLayout(_ref3) {
     //     ? { name: "Window" }
     //     : { name: "Fullscreen" }),
     !hideSave && {
-      name: "Save"
+      name: "Done"
     }].filter(Boolean),
     onClickHeaderItem: onClickHeaderItem,
     onClickIconSidebarItem: onClickIconSidebarItem,
