@@ -311,6 +311,10 @@ export var MainLayout = function MainLayout(_ref3) {
     rightSidebarItems: [debugModeOn && React.createElement(DebugBox, {
       state: debugModeOn,
       lastAction: state.lastAction
+    }), React.createElement(DocumentTypesSideBarBox, {
+      documentTypes: documentTypes || ['Doc type 1', 'Doc type 2'],
+      onSelectDocumentTypes: onSelectDocumentTypes,
+      currentDocumentType: currentDocumentType
     }), state.taskDescription && React.createElement(TaskDescription, {
       description: state.taskDescription
     }), state.regionClsList && React.createElement(ClassSelectionMenu, {
@@ -344,10 +348,6 @@ export var MainLayout = function MainLayout(_ref3) {
     }), React.createElement(HistorySidebarBox, {
       history: state.history,
       onRestoreHistory: action("RESTORE_HISTORY")
-    }), React.createElement(DocumentTypesSideBarBox, {
-      documentTypes: documentTypes || ['Doc type 1', 'Doc type 2'],
-      onSelectDocumentTypes: onSelectDocumentTypes,
-      currentDocumentType: currentDocumentType
     })].filter(Boolean)
   }, canvas), React.createElement(SettingsDialog, {
     open: state.settingsOpen,
