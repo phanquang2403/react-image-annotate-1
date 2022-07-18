@@ -159,7 +159,7 @@ export const Annotator = ({
 
   const dispatch = useEventCallback((action: Action) => {
     if (action.type === "HEADER_BUTTON_CLICKED") {
-      if (["Exit", "Done", "Save", "Complete"].includes(action.buttonName)) {
+      if (["Exit", "Done", "Save", "Complete","Done"].includes(action.buttonName)) {
         return onExit(without(state, "history"))
       }
       else if (action.buttonName === "Save as Draf") {

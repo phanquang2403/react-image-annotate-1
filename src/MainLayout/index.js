@@ -265,7 +265,7 @@ return (
             headerItems={[
               !hidePrev && { name: "Prev" },
               !hideNext && { name: "Next" },
-              { name: 'Save as Draf' },
+              !hideSave &&  { name: 'Save as Draf' },
               state.annotationType !== "video"
                 ? null
                 : !state.videoPlaying
@@ -279,7 +279,7 @@ return (
               //   (state.fullScreen
               //     ? { name: "Window" }
               //     : { name: "Fullscreen" }),
-              !hideSave && { name: "Save" },
+              !hideSave && { name: "Done" },
             ].filter(Boolean)}
             onClickHeaderItem={onClickHeaderItem}
             onClickIconSidebarItem={onClickIconSidebarItem}
