@@ -30,7 +30,8 @@ var listItemTextStyle = {
 };
 export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
   var documentTypes = _ref.documentTypes,
-      onSelectDocumentTypes = _ref.onSelectDocumentTypes;
+      onSelectDocumentTypes = _ref.onSelectDocumentTypes,
+      currentDocumentType = _ref.currentDocumentType;
   var classes = useStyles();
   return React.createElement(ThemeProvider, {
     theme: theme
@@ -44,14 +45,15 @@ export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
     expandedByDefault: true
   }, React.createElement(List, null, documentTypes === null || documentTypes === void 0 ? void 0 : documentTypes.map(function (item, index) {
     return React.createElement("div", {
+      className: currentDocumentType === item.id ? 'document-selected' : '',
       key: index,
       style: {
         padding: 10
       },
       onClick: function onClick() {
-        return onSelectDocumentTypes(item);
+        return onSelectDocumentTypes(item === null || item === void 0 ? void 0 : item.id);
       }
-    }, item);
+    }, item === null || item === void 0 ? void 0 : item.name);
   }))));
 };
 export default DocumentTypesSideBarBox;
