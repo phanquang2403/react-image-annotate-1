@@ -44,8 +44,8 @@ export const DocumentTypesSideBarBox = ({
       >
         <List>
           {documentTypes?.map((item, index) => (
-            <div key={index} style={{padding:10}} onClick={() => onSelectDocumentTypes(item)}>
-              {item}
+            <div key={index} style={{padding:10}} onClick={() => onSelectDocumentTypes(item.id)}>
+              {item.name}
             </div>
           ))}
         </List>

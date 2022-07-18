@@ -80,8 +80,9 @@ storiesOf("Annotator", module)
           name: "Frame 0038",
         },
       ]}
-      documentTypes={['Papa', 'MaMa']}
+      documentTypes={[{id:1,name:'MAMA'},{id:2,name:'PaPa'}]}
       onSelectDocumentTypes={(e) => console.log('Chose type ' + e)}
+      onSaveAsDraf={(e)=>console.log(e)}
       allowComments
     />
   ))

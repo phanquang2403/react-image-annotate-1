@@ -38,8 +38,9 @@ type Props = {
   pointDistancePrecision?: number,
   RegionEditLabel?: Node,
   onExit: (MainLayoutState) => any,
-  onSelectDocumentTypes:(type:string)=>any,
-  documentTypes:any,
+  onSelectDocumentTypes: (type: string) => any,
+  onSaveAsDraf: (e: any) => any,
+  documentTypes: any,
   videoTime?: number,
   videoSrc?: string,
   keyframes?: Object,
@@ -47,16 +48,16 @@ type Props = {
   keypointDefinitions: KeypointsDefinition,
   fullImageSegmentationMode?: boolean,
   autoSegmentationOptions?:
-    | {| type: "simple" |}
-    | {| type: "autoseg", maxClusters?: number, slicWeightFactor?: number |},
-  hideHeader?: boolean,
-  hideHeaderText?: boolean,
-  hideNext?: boolean,
-  hidePrev?: boolean,
-  hideClone?: boolean,
-  hideSettings?: boolean,
-  hideFullScreen?: boolean,
-  hideSave?: boolean,
+  | {| type: "simple" |}
+    | {| type: "autoseg", maxClusters ?: number, slicWeightFactor ?: number |},
+hideHeader ?: boolean,
+  hideHeaderText ?: boolean,
+  hideNext ?: boolean,
+  hidePrev ?: boolean,
+  hideClone ?: boolean,
+  hideSettings ?: boolean,
+  hideFullScreen ?: boolean,
+  hideSave ?: boolean,
 }
 
 export const Annotator = ({
@@ -89,6 +90,7 @@ export const Annotator = ({
   videoName,
   onExit,
   onSelectDocumentTypes,
+  onSaveAsDraf,
   documentTypes,
   onNextImage,
   onPrevImage,
@@ -141,15 +143,15 @@ export const Annotator = ({
       allowComments,
       ...(annotationType === "image"
         ? {
-            selectedImage,
-            images,
-            selectedImageFrameTime:
-              images && images.length > 0 ? images[0].frameTime : undefined,
-          }
+          selectedImage,
+          images,
+          selectedImageFrameTime:
+            images && images.length > 0 ? images[0].frameTime : undefined,
+        }
         : {
-            videoSrc,
-            keyframes,
-          }),
+          videoSrc,
+          keyframes,
+        }),
     })
   )
 
@@ -157,7 +159,11 @@ export const Annotator = ({
     if (action.type === "HEADER_BUTTON_CLICKED") {
       if (["Exit", "Done", "Save", "Complete"].includes(action.buttonName)) {
         return onExit(without(state, "history"))
-      } else if (action.buttonName === "Next" && onNextImage) {
+      }
+      else if (action.buttonName === "Save as Draf") {
+        return onSaveAsDraf(without(state, "history"))
+      }
+      else if (action.buttonName === "Next" && onNextImage) {
         return onNextImage(without(state, "history"))
       } else if (action.buttonName === "Prev" && onPrevImage) {
         return onPrevImage(without(state, "history"))
