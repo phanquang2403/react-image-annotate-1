@@ -8,6 +8,7 @@ import colors from "../colors"
 import BallotIcon from "@mui/icons-material/Ballot"
 import capitalize from "lodash/capitalize"
 import classnames from "classnames"
+import SellIcon from '@mui/icons-material/Sell';
 
 const theme = createTheme()
 const LabelContainer = styled("div")(({ theme }) => ({
@@ -28,6 +29,12 @@ const LabelContainer = styled("div")(({ theme }) => ({
     fontWeight: "bold",
   },
 }))
+const Tag = ({ color }) => {
+  return (
+      <SellIcon style={{ color: color, marginRight: 5 }} fontSize={'inherit'} />
+  )
+}
+
 const Circle = styled("div")(({ theme }) => ({
   width: 12,
   height: 12,
@@ -79,8 +86,9 @@ export const ClassSelectionMenu = ({
             className={classnames({ selected: label === selectedCls })}
             onClick={() => onSelectCls(label)}
           >
-            <Circle
-              style={{ backgroundColor: colors[index % colors.length] }}
+            <Tag
+              color={colors[index % colors.length]}
+
             />
             <Label className={classnames({ selected: label === selectedCls })}>
               {capitalize(label)}

@@ -4,7 +4,7 @@ import React, { setState, memo } from "react"
 import { makeStyles } from "@mui/styles"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import SidebarBoxContainer from "../SidebarBoxContainer"
-import HistoryIcon from "@mui/icons-material/History"
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import List from "@mui/material/List"
 import ListItem from "@mui/material/ListItem"
 import ListItemText from "@mui/material/ListItemText"
@@ -40,12 +40,12 @@ export const DocumentTypesSideBarBox = ({
     <ThemeProvider theme={theme}>
       <SidebarBoxContainer
         title="Document Types"
-        icon={<HistoryIcon style={{ color: grey[700] }} />}
+        icon={<FormatListBulletedIcon style={{ color: grey[700] }} />}
         expandedByDefault
       >
         <List>
           {documentTypes?.map((item, index) => (
-            <div className={(currentDocumentType === item.id ?'document-selected':'') + ' document-type-item'} key={index} style={{padding:10}} onClick={() => onSelectDocumentTypes(item?.id)}>
+            <div className={(currentDocumentType === item.id ?'document-selected':'') + ' document-type-item'} key={index} style={{padding:10,fontSize:13}} onClick={() => onSelectDocumentTypes(item?.id)}>
               {item?.name}
             </div>
           ))}

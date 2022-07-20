@@ -18,6 +18,7 @@ import VisibleOffIcon from "@mui/icons-material/VisibilityOff"
 import styles from "./styles"
 import classnames from "classnames"
 import isEqual from "lodash/isEqual"
+import SellIcon from '@mui/icons-material/Sell';
 
 const theme = createTheme()
 const useStyles = makeStyles((theme) => styles)
@@ -31,10 +32,10 @@ const HeaderSep = styled("div")(({ theme }) => ({
 const Chip = ({ color, text }) => {
   const classes = useStyles()
   return (
-    <span className={classes.chip}>
-      <div className="color" style={{ backgroundColor: color }} />
+    <div style={{display:'flex'}}>
+      <SellIcon style={{ color: color ,marginRight:5}}  fontSize={'inherit'}/>
       <div className="text">{text}</div>
-    </span>
+    </div>
   )
 }
 
