@@ -45,7 +45,7 @@ export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
     expandedByDefault: true
   }, React.createElement(List, null, documentTypes === null || documentTypes === void 0 ? void 0 : documentTypes.map(function (item, index) {
     return React.createElement("div", {
-      className: currentDocumentType === item.id ? 'document-selected' : '',
+      className: (currentDocumentType === item.id ? 'document-selected' : '') + ' document-type-item',
       key: index,
       style: {
         padding: 10
