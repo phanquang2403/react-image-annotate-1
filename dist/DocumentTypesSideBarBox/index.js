@@ -2,7 +2,7 @@ import React, { setState, memo } from "react";
 import { makeStyles } from "@mui/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import SidebarBoxContainer from "../SidebarBoxContainer";
-import HistoryIcon from "@mui/icons-material/History";
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -37,7 +37,7 @@ export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
     theme: theme
   }, React.createElement(SidebarBoxContainer, {
     title: "Document Types",
-    icon: React.createElement(HistoryIcon, {
+    icon: React.createElement(FormatListBulletedIcon, {
       style: {
         color: grey[700]
       }
@@ -48,7 +48,8 @@ export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
       className: (currentDocumentType === item.id ? 'document-selected' : '') + ' document-type-item',
       key: index,
       style: {
-        padding: 10
+        padding: 10,
+        fontSize: 13
       },
       onClick: function onClick() {
         return onSelectDocumentTypes(item === null || item === void 0 ? void 0 : item.id);

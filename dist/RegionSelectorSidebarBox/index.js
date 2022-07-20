@@ -18,6 +18,7 @@ import VisibleOffIcon from "@mui/icons-material/VisibilityOff";
 import styles from "./styles";
 import classnames from "classnames";
 import isEqual from "lodash/isEqual";
+import SellIcon from '@mui/icons-material/Sell';
 var theme = createTheme();
 var useStyles = makeStyles(function (theme) {
   return styles;
@@ -35,13 +36,16 @@ var Chip = function Chip(_ref2) {
   var color = _ref2.color,
       text = _ref2.text;
   var classes = useStyles();
-  return React.createElement("span", {
-    className: classes.chip
-  }, React.createElement("div", {
-    className: "color",
+  return React.createElement("div", {
     style: {
-      backgroundColor: color
+      display: 'flex'
     }
+  }, React.createElement(SellIcon, {
+    style: {
+      color: color,
+      marginRight: 5
+    },
+    fontSize: 'inherit'
   }), React.createElement("div", {
     className: "text"
   }, text));
