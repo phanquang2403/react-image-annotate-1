@@ -9,7 +9,6 @@ import type {
 } from "../MainLayout/types"
 import React, { useEffect, useReducer } from "react"
 import makeImmutable, { without } from "seamless-immutable"
-import '../site.css'
 import type { KeypointsDefinition } from "../ImageCanvas/region-tools"
 import MainLayout from "../MainLayout"
 import type { Node } from "react"
