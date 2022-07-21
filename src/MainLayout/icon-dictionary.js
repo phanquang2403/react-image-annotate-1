@@ -20,6 +20,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
 import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew"
+import SaveAsIcon from '@mui/icons-material/SaveAs';
 
 const faStyle = { marginTop: 4, width: 16, height: 16, marginBottom: 4 }
 
@@ -71,6 +72,9 @@ export const iconDictionary = {
   ),
   "modify-allowed-area": () => (
     <FontAwesomeIcon style={faStyle} size="xs" fixedWidth icon={faEdit} />
+  ),
+  "Save as Draft": () => (
+    <SaveAsIcon style={faStyle} size="xs" fixedWidth icon={faEdit} />
   ),
   "create-keypoints": AccessibilityNewIcon,
   window: FullscreenIcon,

@@ -32,7 +32,7 @@ import useKey from "use-key-hook"
 import { useSettings } from "../SettingsProvider"
 import { withHotKeys } from "react-hotkeys"
 import DocumentTypesSideBarBox from "../DocumentTypesSideBarBox"
-
+import SaveAsIcon from '@mui/icons-material/SaveAs';
 // import Fullscreen from "../Fullscreen"
 
 const emptyArr = []
@@ -265,7 +265,7 @@ return (
             headerItems={[
               !hidePrev && { name: "Prev" },
               !hideNext && { name: "Next" },
-              !hideSave &&  { name: 'Save as Draf' },
+              !hideSave &&  { name: 'Save as Draft',icon :<SaveAsIcon/> },
               state.annotationType !== "video"
                 ? null
                 : !state.videoPlaying
