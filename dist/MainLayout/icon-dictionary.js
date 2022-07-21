@@ -99,14 +99,6 @@ export var iconDictionary = {
       icon: faEdit
     });
   },
-  "Save as Draft": function SaveAsDraft() {
-    return React.createElement(SaveAsIcon, {
-      style: faStyle,
-      size: "xs",
-      fixedWidth: true,
-      icon: faEdit
-    });
-  },
   "create-keypoints": AccessibilityNewIcon,
   window: FullscreenIcon
 };

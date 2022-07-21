@@ -161,7 +161,7 @@ export const Annotator = ({
       if (["Exit", "Done", "Save", "Complete","Done"].includes(action.buttonName)) {
         return onExit(without(state, "history"))
       }
-      else if (action.buttonName === "Save as Draf") {
+      else if (action.buttonName === "Save as Draft") {
         return onSaveAsDraf(without(state, "history"))
       }
       else if (action.buttonName === "Next" && onNextImage) {
