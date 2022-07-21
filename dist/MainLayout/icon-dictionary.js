@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsAlt, faMousePointer, faExpandArrowsAlt, faGripLines, faTag, faPaintBrush, faCrosshairs, faDrawPolygon, faVectorSquare, faHandPaper, faSearch, faMask, faEdit, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
+import SaveAsIcon from '@mui/icons-material/SaveAs';
 var faStyle = {
   marginTop: 4,
   width: 16,
@@ -92,6 +93,14 @@ export var iconDictionary = {
   },
   "modify-allowed-area": function modifyAllowedArea() {
     return React.createElement(FontAwesomeIcon, {
+      style: faStyle,
+      size: "xs",
+      fixedWidth: true,
+      icon: faEdit
+    });
+  },
+  "Save as Draft": function SaveAsDraft() {
+    return React.createElement(SaveAsIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,

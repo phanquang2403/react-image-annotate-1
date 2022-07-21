@@ -2,6 +2,7 @@ import _objectSpread from "@babel/runtime/helpers/esm/objectSpread";
 import _slicedToArray from "@babel/runtime/helpers/esm/slicedToArray";
 import React, { useEffect, useReducer } from "react";
 import makeImmutable, { without } from "seamless-immutable";
+import '../site.css';
 import MainLayout from "../MainLayout";
 import SettingsProvider from "../SettingsProvider";
 import combineReducers from "./reducers/combine-reducers.js";

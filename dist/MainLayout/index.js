@@ -28,7 +28,8 @@ import useImpliedVideoRegions from "./use-implied-video-regions";
 import useKey from "use-key-hook";
 import { useSettings } from "../SettingsProvider";
 import { withHotKeys } from "react-hotkeys";
-import DocumentTypesSideBarBox from "../DocumentTypesSideBarBox"; // import Fullscreen from "../Fullscreen"
+import DocumentTypesSideBarBox from "../DocumentTypesSideBarBox";
+import SaveAsIcon from '@mui/icons-material/SaveAs'; // import Fullscreen from "../Fullscreen"
 
 var emptyArr = [];
 var theme = createTheme();
@@ -245,7 +246,8 @@ export var MainLayout = function MainLayout(_ref3) {
     }, !hideNext && {
       name: "Next"
     }, !hideSave && {
-      name: 'Save as Draf'
+      name: 'Save as Draft',
+      icon: React.createElement(SaveAsIcon, null)
     }, state.annotationType !== "video" ? null : !state.videoPlaying ? {
       name: "Play"
     } : {
