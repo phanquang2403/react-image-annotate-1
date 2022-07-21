@@ -8,6 +8,7 @@ import colors from "../colors";
 import BallotIcon from "@mui/icons-material/Ballot";
 import capitalize from "lodash/capitalize";
 import classnames from "classnames";
+import SellIcon from '@mui/icons-material/Sell';
 var theme = createTheme();
 var LabelContainer = styled("div")(function (_ref) {
   var theme = _ref.theme;
@@ -30,8 +31,20 @@ var LabelContainer = styled("div")(function (_ref) {
     }
   };
 });
-var Circle = styled("div")(function (_ref2) {
-  var theme = _ref2.theme;
+
+var Tag = function Tag(_ref2) {
+  var color = _ref2.color;
+  return React.createElement(SellIcon, {
+    style: {
+      color: color,
+      marginRight: 5
+    },
+    fontSize: 'inherit'
+  });
+};
+
+var Circle = styled("div")(function (_ref3) {
+  var theme = _ref3.theme;
   return {
     width: 12,
     height: 12,
@@ -39,14 +52,14 @@ var Circle = styled("div")(function (_ref2) {
     marginRight: 8
   };
 });
-var Label = styled("div")(function (_ref3) {
-  var theme = _ref3.theme;
+var Label = styled("div")(function (_ref4) {
+  var theme = _ref4.theme;
   return {
     fontSize: 11
   };
 });
-var DashSep = styled("div")(function (_ref4) {
-  var theme = _ref4.theme;
+var DashSep = styled("div")(function (_ref5) {
+  var theme = _ref5.theme;
   return {
     flexGrow: 1,
     borderBottom: "2px dotted ".concat(muiColors.grey[300]),
@@ -54,8 +67,8 @@ var DashSep = styled("div")(function (_ref4) {
     marginRight: 8
   };
 });
-var Number = styled("div")(function (_ref5) {
-  var theme = _ref5.theme;
+var Number = styled("div")(function (_ref6) {
+  var theme = _ref6.theme;
   return {
     fontSize: 11,
     textAlign: "center",
@@ -66,10 +79,10 @@ var Number = styled("div")(function (_ref5) {
     color: muiColors.grey[700]
   };
 });
-export var ClassSelectionMenu = function ClassSelectionMenu(_ref6) {
-  var selectedCls = _ref6.selectedCls,
-      regionClsList = _ref6.regionClsList,
-      onSelectCls = _ref6.onSelectCls;
+export var ClassSelectionMenu = function ClassSelectionMenu(_ref7) {
+  var selectedCls = _ref7.selectedCls,
+      regionClsList = _ref7.regionClsList,
+      onSelectCls = _ref7.onSelectCls;
   useEffect(function () {
     var keyMapping = {};
 
@@ -82,19 +95,6 @@ export var ClassSelectionMenu = function ClassSelectionMenu(_ref6) {
     for (var i = 0; i < 9 && i < regionClsList.length; i++) {
       _loop(i);
     }
-
-    var onKeyDown = function onKeyDown(e) {
-      if (keyMapping[e.key]) {
-        keyMapping[e.key]();
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    };
-
-    window.addEventListener("keydown", onKeyDown);
-    return function () {
-      return window.removeEventListener("keydown", onKeyDown);
-    };
   }, [regionClsList, selectedCls]);
   return React.createElement(ThemeProvider, {
     theme: theme
@@ -115,19 +115,13 @@ export var ClassSelectionMenu = function ClassSelectionMenu(_ref6) {
       onClick: function onClick() {
         return onSelectCls(label);
       }
-    }, React.createElement(Circle, {
-      style: {
-        backgroundColor: colors[index % colors.length]
-      }
+    }, React.createElement(Tag, {
+      color: colors[index % colors.length]
     }), React.createElement(Label, {
       className: classnames({
         selected: label === selectedCls
       })
-    }, capitalize(label)), React.createElement(DashSep, null), React.createElement(Number, {
-      className: classnames({
-        selected: label === selectedCls
-      })
-    }, index < 9 ? "Key [".concat(index + 1, "]") : ""));
+    }, capitalize(label)), React.createElement(DashSep, null));
   }), React.createElement(Box, {
     pb: 2
   })));
