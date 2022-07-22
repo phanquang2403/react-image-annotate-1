@@ -147,7 +147,7 @@ const canvas = (
     showTags={state.showTags}
     allowedArea={state.allowedArea}
     modifyingAllowedArea={state.selectedTool === "modify-allowed-area"}
-    regionClsList={state.regionClsList}
+    regionClsList={labeList || state.regionClsList}
     regionTagList={state.regionTagList}
     regions={
       state.annotationType === "image"
