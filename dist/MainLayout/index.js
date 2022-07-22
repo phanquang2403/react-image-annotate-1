@@ -69,6 +69,7 @@ export var MainLayout = function MainLayout(_ref3) {
       onSelectDocumentTypes = _ref3.onSelectDocumentTypes,
       documentTypes = _ref3.documentTypes,
       currentDocumentType = _ref3.currentDocumentType,
+      labeList = _ref3.labeList,
       hideHeader = _ref3.hideHeader,
       hideHeaderText = _ref3.hideHeaderText,
       _ref3$hideNext = _ref3.hideNext,
@@ -321,7 +322,7 @@ export var MainLayout = function MainLayout(_ref3) {
       description: state.taskDescription
     }), state.regionClsList && React.createElement(ClassSelectionMenu, {
       selectedCls: state.selectedCls,
-      regionClsList: state.regionClsList,
+      regionClsList: labeList || state.regionClsList,
       onSelectCls: action("SELECT_CLASSIFICATION", "cls")
     }), state.labelImages && React.createElement(TagsSidebarBox, {
       currentImage: activeImage,
