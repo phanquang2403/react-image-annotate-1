@@ -315,6 +315,7 @@ export var MainLayout = function MainLayout(_ref3) {
       state: debugModeOn,
       lastAction: state.lastAction
     }), React.createElement(DocumentTypesSideBarBox, {
+      initalState: state,
       documentTypes: documentTypes || ['Doc type 1', 'Doc type 2'],
       onSelectDocumentTypes: onSelectDocumentTypes,
       currentDocumentType: currentDocumentType
