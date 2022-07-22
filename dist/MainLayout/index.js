@@ -156,7 +156,7 @@ export var MainLayout = function MainLayout(_ref3) {
     showTags: state.showTags,
     allowedArea: state.allowedArea,
     modifyingAllowedArea: state.selectedTool === "modify-allowed-area",
-    regionClsList: state.regionClsList,
+    regionClsList: labeList || state.regionClsList,
     regionTagList: state.regionTagList,
     regions: state.annotationType === "image" ? activeImage.regions || [] : impliedVideoRegions,
     realSize: activeImage ? activeImage.realSize : undefined,
