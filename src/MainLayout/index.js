@@ -358,7 +358,7 @@ return (
               debugModeOn && (
                 <DebugBox state={debugModeOn} lastAction={state.lastAction} />
               ),
-              <DocumentTypesSideBarBox documentTypes={documentTypes || ['Doc type 1', 'Doc type 2']} onSelectDocumentTypes={onSelectDocumentTypes} currentDocumentType={currentDocumentType} />,
+              <DocumentTypesSideBarBox initalState={state} documentTypes={documentTypes || ['Doc type 1', 'Doc type 2']} onSelectDocumentTypes={onSelectDocumentTypes} currentDocumentType={currentDocumentType} />,
               state.taskDescription && (
                 <TaskDescription description={state.taskDescription} />
               ),

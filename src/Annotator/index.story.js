@@ -89,7 +89,7 @@ storiesOf("Annotator", module)
         },
       ]}
       documentTypes={[{ id: 1, name: 'MAMA' }, { id: 2, name: 'PaPa' }]}
-      onSelectDocumentTypes={(e) => console.log('Chose type ' + e)}
+      onSelectDocumentTypes={(e,c) => console.log('Chose type ' + e,c)}
       onSaveAsDraf={onChangeLabelList}
       currentDocumentType={1}
       allowComments

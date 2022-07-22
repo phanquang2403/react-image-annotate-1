@@ -15,6 +15,7 @@ import moment from "moment"
 import { grey } from "@mui/material/colors"
 import isEqual from "lodash/isEqual"
 import Box from "@mui/material/Box"
+import  { without } from "seamless-immutable"
 
 const theme = createTheme()
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +34,7 @@ export const DocumentTypesSideBarBox = ({
   documentTypes,
   onSelectDocumentTypes,
   currentDocumentType,
+  initalState
 }) => {
   const classes = useStyles()
  
@@ -45,7 +47,7 @@ export const DocumentTypesSideBarBox = ({
       >
         <List>
           {documentTypes?.map((item, index) => (
-            <div className={(currentDocumentType === item?.id ?'document-selected':'') + ' document-type-item'} key={index} style={{padding:10,fontSize:13}} onClick={() => onSelectDocumentTypes(item?.id)}>
+            <div className={(currentDocumentType === item?.id ?'document-selected':'') + ' document-type-item'} key={index} style={{padding:10,fontSize:13}} onClick={() => onSelectDocumentTypes(item?.id,without(initalState, "history"))}>
               {item?.name}
             </div>
           ))}
