@@ -1,6 +1,6 @@
 // @flow
 
-import React, { setState, memo } from "react"
+import React, { setState, memo, useState } from "react"
 import { makeStyles } from "@mui/styles"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import SidebarBoxContainer from "../SidebarBoxContainer"
@@ -35,13 +35,13 @@ export const DocumentTypesSideBarBox = ({
   currentDocumentType,
 }) => {
   const classes = useStyles()
-
+ 
+ 
   return (
     <ThemeProvider theme={theme}>
       <SidebarBoxContainer
         title="Document Types"
         icon={<FormatListBulletedIcon style={{ color: grey[700] }} />}
-        expandedByDefault
       >
         <List>
           {documentTypes?.map((item, index) => (

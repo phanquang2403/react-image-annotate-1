@@ -39,8 +39,9 @@ type Props = {
   onExit: (MainLayoutState) => any,
   onSelectDocumentTypes: (type: string) => any,
   onSaveAsDraf: (e: any) => any,
-  currentDocumentType:any,
+  currentDocumentType: any,
   documentTypes: any,
+  labeList: Array<string>,
   videoTime?: number,
   videoSrc?: string,
   keyframes?: Object,
@@ -91,6 +92,7 @@ export const Annotator = ({
   onExit,
   onSelectDocumentTypes,
   onSaveAsDraf,
+  labeList,
   currentDocumentType,
   documentTypes,
   onNextImage,
@@ -158,7 +160,7 @@ export const Annotator = ({
 
   const dispatch = useEventCallback((action: Action) => {
     if (action.type === "HEADER_BUTTON_CLICKED") {
-      if (["Exit", "Done", "Save", "Complete","Done"].includes(action.buttonName)) {
+      if (["Exit", "Done", "Save", "Complete", "Done"].includes(action.buttonName)) {
         return onExit(without(state, "history"))
       }
       else if (action.buttonName === "Save as Draft") {
@@ -209,6 +211,7 @@ export const Annotator = ({
         hideSettings={hideSettings}
         hideFullScreen={hideFullScreen}
         hideSave={hideSave}
+        labeList={labeList}
         documentTypes={documentTypes}
         currentDocumentType={currentDocumentType}
         onSelectDocumentTypes={onSelectDocumentTypes}

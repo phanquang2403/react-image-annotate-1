@@ -14,12 +14,20 @@ import Annotator from "./"
 
 import { testRegions } from "../ImageCanvas/index.story"
 
+var labeList1 = [
+  "Alpha1", "Beta1", "Charlie1", "Delta1"
+]
+ 
 const middlewares = [
   (store) => (next) => (action) => {
     actionAddon(action.type)(action)
     return next(action)
   },
 ]
+
+ const onChangeLabelList =()=>{
+  labeList1 = [...labeList1,'JSK','OSU','SO']
+ }
 
 storiesOf("Annotator", module)
   .add("Basic", () => (
@@ -57,7 +65,7 @@ storiesOf("Annotator", module)
       onExit={actionAddon("onExit")}
       middlewares={middlewares}
       labelImages
-      regionClsList={["Alpha", "Beta", "Charlie", "Delta"]}
+      regionClsList={labeList1}
       regionTagList={["tag1", "tag2", "tag3"]}
       imageClsList={["Alpha", "Beta", "Charlie", "Delta"]}
       imageTagList={["tag1", "tag2", "tag3"]}
@@ -80,9 +88,9 @@ storiesOf("Annotator", module)
           name: "Frame 0038",
         },
       ]}
-      documentTypes={[{id:1,name:'MAMA'},{id:2,name:'PaPa'}]}
+      documentTypes={[{ id: 1, name: 'MAMA' }, { id: 2, name: 'PaPa' }]}
       onSelectDocumentTypes={(e) => console.log('Chose type ' + e)}
-      onSaveAsDraf={(e)=>console.log(e)}
+      onSaveAsDraf={onChangeLabelList}
       currentDocumentType={1}
       allowComments
     />

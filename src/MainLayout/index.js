@@ -75,6 +75,7 @@ export const MainLayout = ({
   onSelectDocumentTypes,
   documentTypes,
   currentDocumentType,
+  labeList,
   hideHeader,
   hideHeaderText,
   hideNext = false,
@@ -265,7 +266,7 @@ return (
             headerItems={[
               !hidePrev && { name: "Prev" },
               !hideNext && { name: "Next" },
-              !hideSave &&  { name: 'Save as Draft',icon :<SaveAsIcon/> },
+              !hideSave && { name: 'Save as Draft', icon: <SaveAsIcon /> },
               state.annotationType !== "video"
                 ? null
                 : !state.videoPlaying
@@ -364,7 +365,7 @@ return (
               state.regionClsList && (
                 <ClassSelectionMenu
                   selectedCls={state.selectedCls}
-                  regionClsList={state.regionClsList}
+                  regionClsList={labeList || state.regionClsList}
                   onSelectCls={action("SELECT_CLASSIFICATION", "cls")}
                 />
               ),
@@ -403,7 +404,7 @@ return (
                 history={state.history}
                 onRestoreHistory={action("RESTORE_HISTORY")}
               />,
-            
+
             ].filter(Boolean)}
           >
             {canvas}
