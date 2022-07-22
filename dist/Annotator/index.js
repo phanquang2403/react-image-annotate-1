@@ -46,6 +46,7 @@ export var Annotator = function Annotator(_ref) {
       onExit = _ref.onExit,
       onSelectDocumentTypes = _ref.onSelectDocumentTypes,
       onSaveAsDraf = _ref.onSaveAsDraf,
+      labeList = _ref.labeList,
       currentDocumentType = _ref.currentDocumentType,
       documentTypes = _ref.documentTypes,
       onNextImage = _ref.onNextImage,
@@ -154,6 +155,7 @@ export var Annotator = function Annotator(_ref) {
     hideSettings: hideSettings,
     hideFullScreen: hideFullScreen,
     hideSave: hideSave,
+    labeList: labeList,
     documentTypes: documentTypes,
     currentDocumentType: currentDocumentType,
     onSelectDocumentTypes: onSelectDocumentTypes

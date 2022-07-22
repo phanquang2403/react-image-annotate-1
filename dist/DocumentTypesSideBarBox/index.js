@@ -1,4 +1,4 @@
-import React, { setState, memo } from "react";
+import React, { setState, memo, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import SidebarBoxContainer from "../SidebarBoxContainer";
@@ -41,8 +41,7 @@ export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
       style: {
         color: grey[700]
       }
-    }),
-    expandedByDefault: true
+    })
   }, React.createElement(List, null, documentTypes === null || documentTypes === void 0 ? void 0 : documentTypes.map(function (item, index) {
     return React.createElement("div", {
       className: (currentDocumentType === (item === null || item === void 0 ? void 0 : item.id) ? 'document-selected' : '') + ' document-type-item',
