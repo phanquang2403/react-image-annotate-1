@@ -160,7 +160,6 @@ export const RegionLabel = ({
               <input
                 style={{ width: '89%' ,padding:10,marginTop:5,borderColor:'hsl(0,0%,80%)',borderRadius:5,borderWidth:1}}
                 className="input_region_label"
-                multiline
                 rows={3}
                 ref={commentInputRef}
                 onClick={onCommentInputClick}

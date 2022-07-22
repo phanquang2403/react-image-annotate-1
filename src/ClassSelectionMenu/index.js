@@ -85,6 +85,7 @@ export const ClassSelectionMenu = ({
           <LabelContainer
             className={classnames({ selected: label === selectedCls })}
             onClick={() => onSelectCls(label)}
+            key={index}
           >
             <Tag
               color={colors[index % colors.length]}
