@@ -13,6 +13,7 @@ import moment from "moment";
 import { grey } from "@mui/material/colors";
 import isEqual from "lodash/isEqual";
 import Box from "@mui/material/Box";
+import { without } from "seamless-immutable";
 var theme = createTheme();
 var useStyles = makeStyles(function (theme) {
   return {
@@ -31,7 +32,8 @@ var listItemTextStyle = {
 export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
   var documentTypes = _ref.documentTypes,
       onSelectDocumentTypes = _ref.onSelectDocumentTypes,
-      currentDocumentType = _ref.currentDocumentType;
+      currentDocumentType = _ref.currentDocumentType,
+      initalState = _ref.initalState;
   var classes = useStyles();
   return React.createElement(ThemeProvider, {
     theme: theme
@@ -51,7 +53,7 @@ export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
         fontSize: 13
       },
       onClick: function onClick() {
-        return onSelectDocumentTypes(item === null || item === void 0 ? void 0 : item.id);
+        return onSelectDocumentTypes(item === null || item === void 0 ? void 0 : item.id, without(initalState, "history"));
       }
     }, item === null || item === void 0 ? void 0 : item.name);
   }))));
