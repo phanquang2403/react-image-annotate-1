@@ -42,7 +42,7 @@ var HotkeyDiv = withHotKeys(function (_ref) {
       divRef = _ref.divRef,
       props = _objectWithoutProperties(_ref, ["hotKeys", "children", "divRef"]);
 
-  return React.createElement("div", Object.assign({}, _objectSpread({}, hotKeys, props), {
+  return /*#__PURE__*/React.createElement("div", Object.assign({}, _objectSpread({}, hotKeys, props), {
     ref: divRef
   }), children);
 });
@@ -147,7 +147,7 @@ export var MainLayout = function MainLayout(_ref3) {
       e.target.focus();
     }
   }, []);
-  var canvas = React.createElement(ImageCanvas, Object.assign({}, settings, {
+  var canvas = /*#__PURE__*/React.createElement(ImageCanvas, Object.assign({}, settings, {
     showCrosshairs: settings.showCrosshairs && !["select", "pan", "zoom"].includes(state.selectedTool),
     key: state.selectedImage,
     showMask: state.showMask,
@@ -211,9 +211,9 @@ export var MainLayout = function MainLayout(_ref3) {
   });
   var debugModeOn = Boolean(window.localStorage.$ANNOTATE_DEBUG_MODE && state);
   var nextImageHasRegions = !nextImage || nextImage.regions && nextImage.regions.length > 0;
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(FullScreenContainer, null, React.createElement(FullScreen, {
+  }, /*#__PURE__*/React.createElement(FullScreenContainer, null, /*#__PURE__*/React.createElement(FullScreen, {
     handle: fullScreenHandle,
     onChange: function onChange(open) {
       if (!open) {
@@ -221,7 +221,7 @@ export var MainLayout = function MainLayout(_ref3) {
         action("HEADER_BUTTON_CLICKED", "buttonName")("Window");
       }
     }
-  }, React.createElement(HotkeyDiv, {
+  }, /*#__PURE__*/React.createElement(HotkeyDiv, {
     tabIndex: -1,
     divRef: innerContainerRef,
     onMouseDown: refocusOnMouseEvent,
@@ -229,17 +229,17 @@ export var MainLayout = function MainLayout(_ref3) {
     allowChanges: true,
     handlers: hotkeyHandlers,
     className: classnames(classes.container, state.fullScreen && "Fullscreen")
-  }, React.createElement(Workspace, {
+  }, /*#__PURE__*/React.createElement(Workspace, {
     allowFullscreen: true,
     iconDictionary: iconDictionary,
     hideHeader: hideHeader,
     hideHeaderText: hideHeaderText,
-    headerLeftSide: [state.annotationType === "video" ? React.createElement(KeyframeTimeline, {
+    headerLeftSide: [state.annotationType === "video" ? /*#__PURE__*/React.createElement(KeyframeTimeline, {
       currentTime: state.currentVideoTime,
       duration: state.videoDuration,
       onChangeCurrentTime: action("CHANGE_VIDEO_TIME", "newTime"),
       keyframes: state.keyframes
-    }) : activeImage ? React.createElement("div", {
+    }) : activeImage ? /*#__PURE__*/React.createElement("div", {
       className: classes.headerTitle
     }, activeImage.name) : null].filter(Boolean),
     headerItems: [!hidePrev && {
@@ -248,7 +248,7 @@ export var MainLayout = function MainLayout(_ref3) {
       name: "Next"
     }, !hideSave && {
       name: 'Save as Draft',
-      icon: React.createElement(SaveAsIcon, null)
+      icon: /*#__PURE__*/React.createElement(SaveAsIcon, null)
     }, state.annotationType !== "video" ? null : !state.videoPlaying ? {
       name: "Play"
     } : {
@@ -311,27 +311,29 @@ export var MainLayout = function MainLayout(_ref3) {
     }].filter(Boolean).filter(function (a) {
       return a.alwaysShowing || state.enabledTools.includes(a.name);
     }),
-    rightSidebarItems: [debugModeOn && React.createElement(DebugBox, {
+    rightSidebarItems: [debugModeOn && /*#__PURE__*/React.createElement(DebugBox, {
       state: debugModeOn,
       lastAction: state.lastAction
-    }), React.createElement(DocumentTypesSideBarBox, {
+    }), state.taskDescription && /*#__PURE__*/React.createElement(TaskDescription, {
+      description: state.taskDescription
+    }), /*#__PURE__*/React.createElement(DocumentTypesSideBarBox, {
       initalState: state,
       documentTypes: documentTypes || ['Doc type 1', 'Doc type 2'],
       onSelectDocumentTypes: onSelectDocumentTypes,
       currentDocumentType: currentDocumentType
-    }), state.taskDescription && React.createElement(TaskDescription, {
-      description: state.taskDescription
-    }), state.regionClsList && React.createElement(ClassSelectionMenu, {
+    }), state.regionClsList && /*#__PURE__*/React.createElement(ClassSelectionMenu, {
       selectedCls: state.selectedCls,
       regionClsList: labeList || state.regionClsList,
       onSelectCls: action("SELECT_CLASSIFICATION", "cls")
-    }), state.labelImages && React.createElement(TagsSidebarBox, {
+    }), state.labelImages && /*#__PURE__*/React.createElement(TagsSidebarBox, {
       currentImage: activeImage,
       imageClsList: state.imageClsList,
       imageTagList: state.imageTagList,
       onChangeImage: action("CHANGE_IMAGE", "delta"),
       expandedByDefault: true
-    }), // (state.images?.length || 0) > 1 && (
+    }),
+    /*#__PURE__*/
+    // (state.images?.length || 0) > 1 && (
     //   <ImageSelector
     //     onSelect={action("SELECT_REGION", "region")}
     //     images={state.images}
@@ -342,18 +344,18 @@ export var MainLayout = function MainLayout(_ref3) {
       onSelectRegion: action("SELECT_REGION", "region"),
       onDeleteRegion: action("DELETE_REGION", "region"),
       onChangeRegion: action("CHANGE_REGION", "region")
-    }), state.keyframes && React.createElement(KeyframesSelector, {
+    }), state.keyframes && /*#__PURE__*/React.createElement(KeyframesSelector, {
       onChangeVideoTime: action("CHANGE_VIDEO_TIME", "newTime"),
       onDeleteKeyframe: action("DELETE_KEYFRAME", "time"),
       onChangeCurrentTime: action("CHANGE_VIDEO_TIME", "newTime"),
       currentTime: state.currentVideoTime,
       duration: state.videoDuration,
       keyframes: state.keyframes
-    }), React.createElement(HistorySidebarBox, {
+    }), /*#__PURE__*/React.createElement(HistorySidebarBox, {
       history: state.history,
       onRestoreHistory: action("RESTORE_HISTORY")
     })].filter(Boolean)
-  }, canvas), React.createElement(SettingsDialog, {
+  }, canvas), /*#__PURE__*/React.createElement(SettingsDialog, {
     open: state.settingsOpen,
     onClose: function onClose() {
       return dispatch({

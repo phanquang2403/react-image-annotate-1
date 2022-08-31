@@ -34,9 +34,9 @@ export var PointDistances = function PointDistances(_ref2) {
       regions = _ref2.regions,
       pointDistancePrecision = _ref2.pointDistancePrecision,
       realSize = _ref2.realSize;
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(Svg, null, regions.filter(function (r1) {
+  }, /*#__PURE__*/React.createElement(Svg, null, regions.filter(function (r1) {
     return r1.type === "point";
   }).flatMap(function (r1, i1) {
     return regions.filter(function (r2, i2) {
@@ -61,9 +61,9 @@ export var PointDistances = function PointDistances(_ref2) {
         displayDistance = (Math.sqrt(Math.pow(r1.x - r2.x, 2) + Math.pow(r1.y - r2.y, 2)) * 100).toFixed(pointDistancePrecision) + "%";
       }
 
-      return React.createElement(Fragment, null, React.createElement("path", {
+      return /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("path", {
         d: "M".concat(pr1.x + pr1.w / 2, ",").concat(pr1.y + pr1.h / 2, " L").concat(pr2.x + pr2.w / 2, ",").concat(pr2.y + pr2.h / 2)
-      }), React.createElement("text", {
+      }), /*#__PURE__*/React.createElement("text", {
         x: prm.x,
         y: prm.y
       }, displayDistance));

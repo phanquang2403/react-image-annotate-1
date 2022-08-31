@@ -23,8 +23,8 @@ var theme = createTheme({
 export var Theme = function Theme(_ref) {
   var children = _ref.children;
   var classes = useStyles();
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement("div", null, children));
+  }, /*#__PURE__*/React.createElement("div", null, children));
 };
 export default Theme;

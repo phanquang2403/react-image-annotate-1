@@ -38,12 +38,12 @@ export var PreventScrollToParents = function PreventScrollToParents(_ref2) {
       }
     }, 100);
   });
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(Container, Object.assign({}, otherProps, {
+  }, /*#__PURE__*/React.createElement(Container, Object.assign({}, otherProps, {
     onMouseMove: onMouseMove,
     onMouseLeave: onMouseLeave
-  }), React.createElement(RemoveScroll, {
+  }), /*#__PURE__*/React.createElement(RemoveScroll, {
     enabled: mouseOver,
     removeScrollBar: false
   }, children)));

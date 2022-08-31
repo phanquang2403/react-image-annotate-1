@@ -53,12 +53,12 @@ var KeyframesSelectorSidebarBox = function KeyframesSelectorSidebarBox(_ref2) {
   var keyframeTimes = Object.keys(keyframes).map(function (t) {
     return parseInt(t);
   });
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(SidebarBoxContainer, {
+  }, /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Keyframes",
     subTitle: "",
-    icon: React.createElement(AddLocationIcon, {
+    icon: /*#__PURE__*/React.createElement(AddLocationIcon, {
       style: {
         color: colors.grey[700]
       }
@@ -67,20 +67,20 @@ var KeyframesSelectorSidebarBox = function KeyframesSelectorSidebarBox(_ref2) {
   }, keyframeTimes.map(function (t) {
     var _keyframes$t;
 
-    return React.createElement(KeyframeRow, {
+    return /*#__PURE__*/React.createElement(KeyframeRow, {
       fullWidth: true,
       key: t,
       className: currentVideoTime === t ? "current" : "",
       onClick: function onClick() {
         return onChangeVideoTime(t);
       }
-    }, React.createElement("div", {
+    }, /*#__PURE__*/React.createElement("div", {
       className: "time"
-    }, getTimeString(t, 2), React.createElement("span", {
+    }, getTimeString(t, 2), /*#__PURE__*/React.createElement("span", {
       className: "regionCount"
-    }, "(", (((_keyframes$t = keyframes[t]) === null || _keyframes$t === void 0 ? void 0 : _keyframes$t.regions) || []).length, ")")), React.createElement("div", {
+    }, "(", (((_keyframes$t = keyframes[t]) === null || _keyframes$t === void 0 ? void 0 : _keyframes$t.regions) || []).length, ")")), /*#__PURE__*/React.createElement("div", {
       className: "trash"
-    }, React.createElement(TrashIcon, {
+    }, /*#__PURE__*/React.createElement(TrashIcon, {
       onClick: function onClick(e) {
         onDeleteKeyframe(t);
         e.stopPropagation();

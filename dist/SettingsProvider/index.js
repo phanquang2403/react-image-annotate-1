@@ -44,7 +44,7 @@ export var SettingsProvider = function SettingsProvider(_ref) {
     window.localStorage.setItem("settings_".concat(setting), JSON.stringify(value));
   };
 
-  return React.createElement(SettingsContext.Provider, {
+  return /*#__PURE__*/React.createElement(SettingsContext.Provider, {
     value: _objectSpread({}, state, {
       changeSetting: changeSetting
     })

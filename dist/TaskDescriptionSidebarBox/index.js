@@ -41,17 +41,17 @@ var MarkdownContainer = styled("div")(function (_ref) {
 });
 export var TaskDescriptionSidebarBox = function TaskDescriptionSidebarBox(_ref2) {
   var description = _ref2.description;
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(SidebarBoxContainer, {
+  }, /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Task Description",
-    icon: React.createElement(DescriptionIcon, {
+    icon: /*#__PURE__*/React.createElement(DescriptionIcon, {
       style: {
         color: grey[700]
       }
     }),
     expandedByDefault: description && description !== "" ? false : true
-  }, React.createElement(MarkdownContainer, null, React.createElement(Markdown, {
+  }, /*#__PURE__*/React.createElement(MarkdownContainer, null, /*#__PURE__*/React.createElement(Markdown, {
     source: description
   }))));
 };

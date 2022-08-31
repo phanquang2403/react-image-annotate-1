@@ -1,4 +1,5 @@
 import _objectSpread from "@babel/runtime/helpers/esm/objectSpread";
+import _toConsumableArray from "@babel/runtime/helpers/esm/toConsumableArray";
 import React, { useRef, memo } from "react";
 import Paper from "@mui/material/Paper";
 import { makeStyles } from "@mui/styles";
@@ -37,39 +38,37 @@ export var RegionLabel = function RegionLabel(_ref) {
     if (commentInput) return commentInput.focus();
   };
 
-  return React.createElement(ThemeProvider, {
+  var SortData = _toConsumableArray(allowedClasses).sort();
+
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(Paper, {
+  }, /*#__PURE__*/React.createElement(Paper, {
     onClick: function onClick() {
       return !editing ? onOpen(region) : null;
     },
     className: classnames(classes.regionInfo, {
       highlighted: region.highlighted
     })
-  }, !editing ? React.createElement("div", null, region.cls && React.createElement("div", {
+  }, !editing ? /*#__PURE__*/React.createElement("div", null, region.cls && /*#__PURE__*/React.createElement("div", {
     className: "name"
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "circle",
     style: {
       backgroundColor: region.color
     }
-  }), region.cls), region.tags && React.createElement("div", {
+  }), region.cls), region.tags && /*#__PURE__*/React.createElement("div", {
     className: "tags"
   }, region.tags.map(function (t) {
-    return React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       key: t,
       className: "tag"
     }, t);
-  }))) : React.createElement("div", {
-    style: {
-      width: 200
-    }
-  }, React.createElement("div", {
+  }))) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       flexDirection: "row"
     }
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       backgroundColor: region.color || "#888",
@@ -81,11 +80,11 @@ export var RegionLabel = function RegionLabel(_ref) {
       fontWeight: "bold",
       textShadow: "0px 0px 5px rgba(0,0,0,0.4)"
     }
-  }, region.type), React.createElement("div", {
+  }, region.type), /*#__PURE__*/React.createElement("div", {
     style: {
       flexGrow: 1
     }
-  }), React.createElement(IconButton, {
+  }), /*#__PURE__*/React.createElement(IconButton, {
     onClick: function onClick() {
       return onDelete(region);
     },
@@ -96,17 +95,17 @@ export var RegionLabel = function RegionLabel(_ref) {
     },
     size: "small",
     variant: "outlined"
-  }, React.createElement(TrashIcon, {
+  }, /*#__PURE__*/React.createElement(TrashIcon, {
     style: {
       marginTop: -8,
       width: 16,
       height: 16
     }
-  }))), (allowedClasses || []).length > 0 && React.createElement("div", {
+  }))), (SortData || []).length > 0 && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 6
     }
-  }, React.createElement(CreatableSelect, {
+  }, /*#__PURE__*/React.createElement(CreatableSelect, {
     placeholder: "Classification",
     onChange: function onChange(o, actionMeta) {
       if (actionMeta.action == "create-option") {
@@ -121,17 +120,17 @@ export var RegionLabel = function RegionLabel(_ref) {
       label: region.cls,
       value: region.cls
     } : null,
-    options: asMutable(allowedClasses.map(function (c) {
+    options: asMutable(SortData.map(function (c) {
       return {
         value: c,
         label: c
       };
     }))
-  })), (allowedTags || []).length > 0 && React.createElement("div", {
+  })), (allowedTags || []).length > 0 && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 4
     }
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     onChange: function onChange(newTags) {
       return _onChange(_objectSpread({}, region, {
         tags: newTags.map(function (t) {
@@ -153,7 +152,7 @@ export var RegionLabel = function RegionLabel(_ref) {
         label: c
       };
     }))
-  })), allowComments && React.createElement("input", {
+  })), allowComments && /*#__PURE__*/React.createElement("input", {
     style: {
       width: '89%',
       padding: 10,
@@ -163,7 +162,6 @@ export var RegionLabel = function RegionLabel(_ref) {
       borderWidth: 1
     },
     className: "input_region_label",
-    multiline: true,
     rows: 3,
     ref: commentInputRef,
     onClick: onCommentInputClick,
@@ -173,23 +171,23 @@ export var RegionLabel = function RegionLabel(_ref) {
         comment: event.target.value
       }));
     }
-  }), onClose && React.createElement("div", {
+  }), onClose && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 4,
       display: "flex"
     }
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       flexGrow: 1
     }
-  }), React.createElement(Button, {
+  }), /*#__PURE__*/React.createElement(Button, {
     onClick: function onClick() {
       return onClose(region);
     },
     size: "small",
     variant: "contained",
     color: "primary"
-  }, React.createElement(CheckIcon, null))))));
+  }, /*#__PURE__*/React.createElement(CheckIcon, null))))));
 };
 export default memo(RegionLabel, function (prevProps, nextProps) {
   return prevProps.editing === nextProps.editing && prevProps.region === nextProps.region;

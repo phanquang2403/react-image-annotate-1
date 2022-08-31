@@ -131,18 +131,18 @@ export default (function (_ref4) {
       height: isNaN(height) ? 0 : height
     };
   }, [imagePosition.topLeft.x, imagePosition.topLeft.y, imagePosition.bottomRight.x, imagePosition.bottomRight.y]);
-  if (!videoSrc && !imageSrc) return React.createElement(Error, null, "No imageSrc or videoSrc provided");
-  if (error) return React.createElement(Error, null, error);
-  return React.createElement(ThemeProvider, {
+  if (!videoSrc && !imageSrc) return /*#__PURE__*/React.createElement(Error, null, "No imageSrc or videoSrc provided");
+  if (error) return /*#__PURE__*/React.createElement(Error, null, error);
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, imageSrc && videoTime === undefined ? React.createElement(StyledImage, Object.assign({}, mouseEvents, {
+  }, imageSrc && videoTime === undefined ? /*#__PURE__*/React.createElement(StyledImage, Object.assign({}, mouseEvents, {
     src: imageSrc,
     ref: imageRef,
     style: stylePosition,
     onLoad: onImageLoaded,
     onError: onImageError,
     crossOrigin: useCrossOrigin ? "anonymous" : undefined
-  })) : React.createElement(Video, Object.assign({}, mouseEvents, {
+  })) : /*#__PURE__*/React.createElement(Video, Object.assign({}, mouseEvents, {
     ref: videoRef,
     style: stylePosition,
     onLoadedMetadata: onLoadedVideoMetadata,

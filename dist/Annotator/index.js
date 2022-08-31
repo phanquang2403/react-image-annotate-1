@@ -140,7 +140,7 @@ export var Annotator = function Annotator(_ref) {
     });
   }, [selectedImage, state.images]);
   if (!images && !videoSrc) return 'Missing required prop "images" or "videoSrc"';
-  return React.createElement(SettingsProvider, null, React.createElement(MainLayout, {
+  return /*#__PURE__*/React.createElement(SettingsProvider, null, /*#__PURE__*/React.createElement(MainLayout, {
     RegionEditLabel: RegionEditLabel,
     alwaysShowNextButton: Boolean(onNextImage),
     alwaysShowPrevButton: Boolean(onPrevImage),

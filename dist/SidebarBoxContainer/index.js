@@ -69,7 +69,7 @@ export var SidebarBoxContainer = function SidebarBoxContainer(_ref) {
       _ref$expandedByDefaul = _ref.expandedByDefault,
       expandedByDefault = _ref$expandedByDefaul === void 0 ? false : _ref$expandedByDefaul;
   var classes = useStyles();
-  var content = React.createElement("div", {
+  var content = /*#__PURE__*/React.createElement("div", {
     className: classnames(classes.expandedContent, noScroll && "noScroll")
   }, children);
 
@@ -81,9 +81,9 @@ export var SidebarBoxContainer = function SidebarBoxContainer(_ref) {
   var toggleExpanded = useEventCallback(function () {
     return changeExpanded(!expanded);
   });
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(SidebarBox, {
+  }, /*#__PURE__*/React.createElement(SidebarBox, {
     icon: icon,
     title: title
   }, children));

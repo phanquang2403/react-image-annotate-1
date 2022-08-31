@@ -44,9 +44,9 @@ export var RegionSelectAndTransformBox = memo(function (_ref2) {
   var _layoutParams$current = layoutParams.current,
       iw = _layoutParams$current.iw,
       ih = _layoutParams$current.ih;
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(Fragment, null, React.createElement(PreventScrollToParents, null, showHighlightBox && r.type !== "polygon" && React.createElement(HighlightBox, {
+  }, /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement(PreventScrollToParents, null, showHighlightBox && r.type !== "polygon" && /*#__PURE__*/React.createElement(HighlightBox, {
     region: r,
     mouseEvents: mouseEvents,
     dragWithPrimary: dragWithPrimary,
@@ -60,7 +60,7 @@ export var RegionSelectAndTransformBox = memo(function (_ref2) {
         px = _ref4[0],
         py = _ref4[1];
 
-    return React.createElement(TransformGrabber, Object.assign({
+    return /*#__PURE__*/React.createElement(TransformGrabber, Object.assign({
       key: i
     }, mouseEvents, {
       onMouseDown: function onMouseDown(e) {
@@ -80,7 +80,7 @@ export var RegionSelectAndTransformBox = memo(function (_ref2) {
         py = _ref6[1];
 
     var proj = mat.clone().inverse().applyToPoint(px * iw, py * ih);
-    return React.createElement(TransformGrabber, Object.assign({
+    return /*#__PURE__*/React.createElement(TransformGrabber, Object.assign({
       key: i
     }, mouseEvents, {
       onMouseDown: function onMouseDown(e) {
@@ -105,7 +105,7 @@ export var RegionSelectAndTransformBox = memo(function (_ref2) {
     return [(p1[0] + p2[0]) / 2, (p1[1] + p2[1]) / 2];
   }).map(function (pa, i) {
     var proj = mat.clone().inverse().applyToPoint(pa[0] * iw, pa[1] * ih);
-    return React.createElement(TransformGrabber, Object.assign({
+    return /*#__PURE__*/React.createElement(TransformGrabber, Object.assign({
       key: i
     }, mouseEvents, {
       onMouseDown: function onMouseDown(e) {
@@ -129,10 +129,10 @@ export var RegionSelectAndTransformBox = memo(function (_ref2) {
         py = _ref10$.y;
 
     var proj = mat.clone().inverse().applyToPoint(px * iw, py * ih);
-    return React.createElement(Tooltip, {
+    return /*#__PURE__*/React.createElement(Tooltip, {
       title: keypointId,
       key: i
-    }, React.createElement(TransformGrabber, Object.assign({
+    }, /*#__PURE__*/React.createElement(TransformGrabber, Object.assign({
       key: i
     }, mouseEvents, {
       onMouseDown: function onMouseDown(e) {
@@ -155,7 +155,7 @@ export var RegionSelectAndTransformBoxes = memo(function (props) {
   }).filter(function (r) {
     return !r.locked;
   }).map(function (r, i) {
-    return React.createElement(RegionSelectAndTransformBox, Object.assign({
+    return /*#__PURE__*/React.createElement(RegionSelectAndTransformBox, Object.assign({
       key: r.id
     }, props, {
       region: r

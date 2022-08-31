@@ -69,30 +69,30 @@ export var TagsSidebarBox = function TagsSidebarBox(_ref) {
     });
   }, [tags]);
   if (!currentImage) return null;
-  return React.createElement(SidebarBoxContainer, {
+  return /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Image Tags",
     expandedByDefault: true,
     noScroll: true,
-    icon: React.createElement(StyleIcon, {
+    icon: /*#__PURE__*/React.createElement(StyleIcon, {
       style: {
         color: grey[700]
       }
     })
-  }, imageClsList.length > 0 && React.createElement("div", {
+  }, imageClsList.length > 0 && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 8
     }
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     placeholder: "Image Classification",
     onChange: onChangeClassification,
     value: selectValue,
     options: memoImgClsList
-  })), imageTagList.length > 0 && React.createElement("div", {
+  })), imageTagList.length > 0 && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: 8,
       paddingTop: 0
     }
-  }, React.createElement(Select, {
+  }, /*#__PURE__*/React.createElement(Select, {
     isMulti: true,
     placeholder: "Image Tags",
     onChange: onChangeTags,

@@ -55,14 +55,14 @@ export var RegionTags = function RegionTags(_ref) {
     };
 
     if (region.locked) {
-      return React.createElement("div", {
+      return /*#__PURE__*/React.createElement("div", {
         key: region.id,
         style: _objectSpread({
           position: "absolute"
         }, coords, {
           zIndex: 10 + (region.editingLabels ? 5 : 0)
         })
-      }, React.createElement(Paper, {
+      }, /*#__PURE__*/React.createElement(Paper, {
         style: _objectSpread({
           position: "absolute",
           left: 0
@@ -79,7 +79,7 @@ export var RegionTags = function RegionTags(_ref) {
           opacity: 0.5,
           pointerEvents: "none"
         })
-      }, React.createElement(LockIcon, {
+      }, /*#__PURE__*/React.createElement(LockIcon, {
         style: {
           width: 16,
           height: 16,
@@ -88,7 +88,7 @@ export var RegionTags = function RegionTags(_ref) {
       })));
     }
 
-    return React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       key: region.id,
       style: _objectSpread({
         position: "absolute"
@@ -109,17 +109,19 @@ export var RegionTags = function RegionTags(_ref) {
           mouseEvents.onMouseUp(e);
         }
       }
-    }, React.createElement("div", Object.assign({
+    }, /*#__PURE__*/React.createElement("div", Object.assign({
       style: _objectSpread({
         position: "absolute",
         zIndex: 20,
         left: 0
+      }, region.editingLabels && {
+        width: 500
       }, displayOnTop ? {
         bottom: 0
       } : {
         top: 0
       })
-    }, !region.editingLabels ? copyWithout(mouseEvents, "onMouseDown", "onMouseUp") : {}), React.createElement(RegionLabel, {
+    }, !region.editingLabels ? copyWithout(mouseEvents, "onMouseDown", "onMouseUp") : {}), /*#__PURE__*/React.createElement(RegionLabel, {
       allowedClasses: regionClsList,
       allowedTags: regionTagList,
       onOpen: onBeginRegionEdit,

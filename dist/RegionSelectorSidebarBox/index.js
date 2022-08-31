@@ -36,17 +36,17 @@ var Chip = function Chip(_ref2) {
   var color = _ref2.color,
       text = _ref2.text;
   var classes = useStyles();
-  return React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex'
     }
-  }, React.createElement(SellIcon, {
+  }, /*#__PURE__*/React.createElement(SellIcon, {
     style: {
       color: color,
       marginRight: 5
     },
     fontSize: 'inherit'
-  }), React.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     className: "text"
   }, text));
 };
@@ -69,7 +69,7 @@ var RowLayout = function RowLayout(_ref3) {
       mouseOver = _useState2[0],
       changeMouseOver = _useState2[1];
 
-  return React.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     onClick: onClick,
     onMouseEnter: function onMouseEnter() {
       return changeMouseOver(true);
@@ -81,62 +81,62 @@ var RowLayout = function RowLayout(_ref3) {
       header: header,
       highlighted: highlighted
     })
-  }, React.createElement(Grid, {
+  }, /*#__PURE__*/React.createElement(Grid, {
     container: true,
     alignItems: "center"
-  }, React.createElement(Grid, {
+  }, /*#__PURE__*/React.createElement(Grid, {
     item: true,
     xs: 2
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: "right",
       paddingRight: 10
     }
-  }, order)), React.createElement(Grid, {
+  }, order)), /*#__PURE__*/React.createElement(Grid, {
     item: true,
     xs: 5
-  }, classification), React.createElement(Grid, {
+  }, classification), /*#__PURE__*/React.createElement(Grid, {
     item: true,
     xs: 2
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: "right",
       paddingRight: 6
     }
-  }, area)), React.createElement(Grid, {
+  }, area)), /*#__PURE__*/React.createElement(Grid, {
     item: true,
     xs: 1
-  }, trash), React.createElement(Grid, {
+  }, trash), /*#__PURE__*/React.createElement(Grid, {
     item: true,
     xs: 1
-  }, lock), React.createElement(Grid, {
+  }, lock), /*#__PURE__*/React.createElement(Grid, {
     item: true,
     xs: 1
   }, visible)));
 };
 
 var RowHeader = function RowHeader() {
-  return React.createElement(RowLayout, {
+  return /*#__PURE__*/React.createElement(RowLayout, {
     header: true,
     highlighted: false,
-    order: React.createElement(ReorderIcon, {
+    order: /*#__PURE__*/React.createElement(ReorderIcon, {
       className: "icon"
     }),
-    classification: React.createElement("div", {
+    classification: /*#__PURE__*/React.createElement("div", {
       style: {
         paddingLeft: 10
       }
     }, "Class"),
-    area: React.createElement(PieChartIcon, {
+    area: /*#__PURE__*/React.createElement(PieChartIcon, {
       className: "icon"
     }),
-    trash: React.createElement(TrashIcon, {
+    trash: /*#__PURE__*/React.createElement(TrashIcon, {
       className: "icon"
     }),
-    lock: React.createElement(LockIcon, {
+    lock: /*#__PURE__*/React.createElement(LockIcon, {
       className: "icon"
     }),
-    visible: React.createElement(VisibleIcon, {
+    visible: /*#__PURE__*/React.createElement(VisibleIcon, {
       className: "icon"
     })
   });
@@ -156,32 +156,32 @@ var Row = function Row(_ref4) {
       cls = _ref4.cls,
       comment = _ref4.comment,
       index = _ref4.index;
-  return React.createElement(RowLayout, {
+  return /*#__PURE__*/React.createElement(RowLayout, {
     header: false,
     highlighted: highlighted,
     onClick: function onClick() {
       return onSelectRegion(r);
     },
     order: "#".concat(index + 1),
-    classification: React.createElement(Chip, {
+    classification: /*#__PURE__*/React.createElement(Chip, {
       text: comment || "",
       color: color || "#ddd"
     }),
     area: "",
-    trash: React.createElement(TrashIcon, {
+    trash: /*#__PURE__*/React.createElement(TrashIcon, {
       onClick: function onClick() {
         return onDeleteRegion(r);
       },
       className: "icon2"
     }),
-    lock: r.locked ? React.createElement(LockIcon, {
+    lock: r.locked ? /*#__PURE__*/React.createElement(LockIcon, {
       onClick: function onClick() {
         return onChangeRegion(_objectSpread({}, r, {
           locked: false
         }));
       },
       className: "icon2"
-    }) : React.createElement(UnlockIcon, {
+    }) : /*#__PURE__*/React.createElement(UnlockIcon, {
       onClick: function onClick() {
         return onChangeRegion(_objectSpread({}, r, {
           locked: true
@@ -189,14 +189,14 @@ var Row = function Row(_ref4) {
       },
       className: "icon2"
     }),
-    visible: r.visible || r.visible === undefined ? React.createElement(VisibleIcon, {
+    visible: r.visible || r.visible === undefined ? /*#__PURE__*/React.createElement(VisibleIcon, {
       onClick: function onClick() {
         return onChangeRegion(_objectSpread({}, r, {
           visible: false
         }));
       },
       className: "icon2"
-    }) : React.createElement(VisibleOffIcon, {
+    }) : /*#__PURE__*/React.createElement(VisibleOffIcon, {
       onClick: function onClick() {
         return onChangeRegion(_objectSpread({}, r, {
           visible: true
@@ -218,21 +218,21 @@ export var RegionSelectorSidebarBox = function RegionSelectorSidebarBox(_ref5) {
       onChangeRegion = _ref5.onChangeRegion,
       onSelectRegion = _ref5.onSelectRegion;
   var classes = useStyles();
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(SidebarBoxContainer, {
+  }, /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Boxes list",
     subTitle: "",
-    icon: React.createElement(RegionIcon, {
+    icon: /*#__PURE__*/React.createElement(RegionIcon, {
       style: {
         color: grey[700]
       }
     }),
     expandedByDefault: true
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: classes.container
-  }, React.createElement(MemoRowHeader, null), React.createElement(HeaderSep, null), regions.map(function (r, i) {
-    return React.createElement(MemoRow, Object.assign({
+  }, /*#__PURE__*/React.createElement(MemoRowHeader, null), /*#__PURE__*/React.createElement(HeaderSep, null), regions.map(function (r, i) {
+    return /*#__PURE__*/React.createElement(MemoRow, Object.assign({
       key: r.id
     }, r, {
       region: r,

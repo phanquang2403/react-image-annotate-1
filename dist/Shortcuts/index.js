@@ -118,11 +118,11 @@ export default (function (_ref) {
       document.activeElement.blur();
     };
   }, [shortcuts]);
-  return React.createElement(SidebarBoxContainer, {
+  return /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Shortcuts"
   }, Object.keys(shortcuts).map(function (actionId, index) {
     if (!shortcuts[actionId]) return null;
-    return React.createElement(ShortcutField, {
+    return /*#__PURE__*/React.createElement(ShortcutField, {
       key: actionId,
       actionId: actionId,
       actionName: shortcuts[actionId].name,

@@ -66,9 +66,9 @@ export var HighlightBox = function HighlightBox(_ref) {
     height: pbox.h + 10
   };
   var pathD = r.type === "point" ? "M5,5 L".concat(styleCoords.width - 5, " 5L").concat(styleCoords.width - 5, " ").concat(styleCoords.height - 5, "L5 ").concat(styleCoords.height - 5, "Z") : "M5,5 L".concat(pbox.w + 5, ",5 L").concat(pbox.w + 5, ",").concat(pbox.h + 5, " L5,").concat(pbox.h + 5, " Z");
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement("svg", Object.assign({
+  }, /*#__PURE__*/React.createElement("svg", Object.assign({
     key: r.id,
     className: classnames(classes.highlightBox, {
       highlighted: r.highlighted
@@ -92,7 +92,7 @@ export var HighlightBox = function HighlightBox(_ref) {
     }, {
       position: "absolute"
     }, styleCoords)
-  }), React.createElement("path", {
+  }), /*#__PURE__*/React.createElement("path", {
     d: pathD
   })));
 };

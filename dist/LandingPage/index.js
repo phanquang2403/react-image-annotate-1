@@ -100,7 +100,7 @@ var Section = styled("div")(function (_ref9) {
 var CodeBlock = function CodeBlock(_ref10) {
   var language = _ref10.language,
       value = _ref10.value;
-  return React.createElement(SyntaxHighlighter, {
+  return /*#__PURE__*/React.createElement(SyntaxHighlighter, {
     language: language,
     style: docco
   }, value);
@@ -120,33 +120,33 @@ function HeadingRenderer(props) {
 }
 
 var LandingPage = function LandingPage() {
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(RootContainer, null, React.createElement(Header, {
+  }, /*#__PURE__*/React.createElement(RootContainer, null, /*#__PURE__*/React.createElement(Header, {
     id: "about"
-  }, React.createElement(ContentContainer, {
+  }, /*#__PURE__*/React.createElement(ContentContainer, {
     style: {
       flexDirection: "row",
       flexGrow: 1
     }
-  }, React.createElement(HeaderButton, {
+  }, /*#__PURE__*/React.createElement(HeaderButton, {
     href: "#features"
-  }, "Features"), React.createElement(HeaderButton, {
+  }, "Features"), /*#__PURE__*/React.createElement(HeaderButton, {
     href: "#usage"
-  }, "Usage"), React.createElement(HeaderButton, {
+  }, "Usage"), /*#__PURE__*/React.createElement(HeaderButton, {
     href: "#props"
-  }, "Props"), React.createElement(HeaderButton, {
+  }, "Props"), /*#__PURE__*/React.createElement(HeaderButton, {
     href: "./demo"
-  }, "Demo Playground"))), React.createElement(Hero, null, React.createElement(ContentContainer, null, React.createElement(HeroMain, null, "React Image Annotate"), React.createElement(HeroSub, null, "Powerful React component for image annotations with bounding boxes, tagging, classification, multiple images and polygon segmentation."), React.createElement(HeroButtons, null, React.createElement(GitHubButton, {
+  }, "Demo Playground"))), /*#__PURE__*/React.createElement(Hero, null, /*#__PURE__*/React.createElement(ContentContainer, null, /*#__PURE__*/React.createElement(HeroMain, null, "React Image Annotate"), /*#__PURE__*/React.createElement(HeroSub, null, "Powerful React component for image annotations with bounding boxes, tagging, classification, multiple images and polygon segmentation."), /*#__PURE__*/React.createElement(HeroButtons, null, /*#__PURE__*/React.createElement(GitHubButton, {
     href: "https://github.com/waoai/react-image-annotate",
     "data-size": "large",
     "data-show-count": "true",
     "aria-label": "Star waoai/react-image-annotate on GitHub"
-  }, "Star")))), React.createElement(ContentContainer, {
+  }, "Star")))), /*#__PURE__*/React.createElement(ContentContainer, {
     className: "markdown-body"
-  }, React.createElement(Section, {
+  }, /*#__PURE__*/React.createElement(Section, {
     className: "markdown-body"
-  }, React.createElement(Markdown, {
+  }, /*#__PURE__*/React.createElement(Markdown, {
     escapeHtml: false,
     source: contentMd,
     renderers: {

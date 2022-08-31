@@ -34,7 +34,7 @@ var LabelContainer = styled("div")(function (_ref) {
 
 var Tag = function Tag(_ref2) {
   var color = _ref2.color;
-  return React.createElement(SellIcon, {
+  return /*#__PURE__*/React.createElement(SellIcon, {
     style: {
       color: color,
       marginRight: 5
@@ -96,33 +96,34 @@ export var ClassSelectionMenu = function ClassSelectionMenu(_ref7) {
       _loop(i);
     }
   }, [regionClsList, selectedCls]);
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(SidebarBoxContainer, {
+  }, /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Label list",
     subTitle: "",
-    icon: React.createElement(BallotIcon, {
+    icon: /*#__PURE__*/React.createElement(BallotIcon, {
       style: {
         color: muiColors.grey[700]
       }
     }),
     expandedByDefault: true
   }, regionClsList.map(function (label, index) {
-    return React.createElement(LabelContainer, {
+    return /*#__PURE__*/React.createElement(LabelContainer, {
       className: classnames({
         selected: label === selectedCls
       }),
       onClick: function onClick() {
         return onSelectCls(label);
-      }
-    }, React.createElement(Tag, {
+      },
+      key: index
+    }, /*#__PURE__*/React.createElement(Tag, {
       color: colors[index % colors.length]
-    }), React.createElement(Label, {
+    }), /*#__PURE__*/React.createElement(Label, {
       className: classnames({
         selected: label === selectedCls
       })
-    }, capitalize(label)), React.createElement(DashSep, null));
-  }), React.createElement(Box, {
+    }, capitalize(label)), /*#__PURE__*/React.createElement(DashSep, null));
+  }), /*#__PURE__*/React.createElement(Box, {
     pb: 2
   })));
 };

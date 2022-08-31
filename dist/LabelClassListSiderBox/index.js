@@ -33,17 +33,17 @@ export var LabelClassListSiderBox = function LabelClassListSiderBox(_ref) {
       onSelectDocumentTypes = _ref.onSelectDocumentTypes,
       currentDocumentType = _ref.currentDocumentType;
   var classes = useStyles();
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(SidebarBoxContainer, {
+  }, /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Document Types",
-    icon: React.createElement(FormatListBulletedIcon, {
+    icon: /*#__PURE__*/React.createElement(FormatListBulletedIcon, {
       style: {
         color: grey[700]
       }
     })
-  }, React.createElement(List, null, labelList === null || labelList === void 0 ? void 0 : labelList.map(function (item, index) {
-    return React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(List, null, labelList === null || labelList === void 0 ? void 0 : labelList.map(function (item, index) {
+    return /*#__PURE__*/React.createElement("div", {
       className: 'label-item',
       key: index,
       style: {
