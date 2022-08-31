@@ -50,7 +50,7 @@ var useStyles = makeStyles(function (theme) {
       }
     },
     expandedContent: {
-      maxHeight: 300,
+      maxHeight: 700,
       overflowY: "auto",
       "&.noScroll": {
         overflowY: "visible",
