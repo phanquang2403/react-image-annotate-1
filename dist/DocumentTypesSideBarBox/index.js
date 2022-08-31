@@ -35,17 +35,17 @@ export var DocumentTypesSideBarBox = function DocumentTypesSideBarBox(_ref) {
       currentDocumentType = _ref.currentDocumentType,
       initalState = _ref.initalState;
   var classes = useStyles();
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(SidebarBoxContainer, {
+  }, /*#__PURE__*/React.createElement(SidebarBoxContainer, {
     title: "Document Types",
-    icon: React.createElement(FormatListBulletedIcon, {
+    icon: /*#__PURE__*/React.createElement(FormatListBulletedIcon, {
       style: {
         color: grey[700]
       }
     })
-  }, React.createElement(List, null, documentTypes === null || documentTypes === void 0 ? void 0 : documentTypes.map(function (item, index) {
-    return React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(List, null, documentTypes === null || documentTypes === void 0 ? void 0 : documentTypes.map(function (item, index) {
+    return /*#__PURE__*/React.createElement("div", {
       className: (currentDocumentType === (item === null || item === void 0 ? void 0 : item.id) ? 'document-selected' : '') + ' document-type-item',
       key: index,
       style: {

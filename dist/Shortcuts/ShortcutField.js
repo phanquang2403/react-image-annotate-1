@@ -27,11 +27,11 @@ var ShortcutField = function ShortcutField(_ref) {
       keyName = _ref.keyName,
       onChangeShortcut = _ref.onChangeShortcut;
   var classes = useStyles();
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: classes.shortcutKeyFieldWrapper
-  }, React.createElement(TextField, {
+  }, /*#__PURE__*/React.createElement(TextField, {
     variant: "outlined",
     label: actionName,
     className: classes.shortcutTextfield,

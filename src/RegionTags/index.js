@@ -101,6 +101,7 @@ export const RegionTags = ({
               position: "absolute",
               zIndex: 20,
               left: 0,
+              ...(region.editingLabels && {width: 500}),
               ...(displayOnTop ? { bottom: 0 } : { top: 0 }),
             }}
             {...(!region.editingLabels

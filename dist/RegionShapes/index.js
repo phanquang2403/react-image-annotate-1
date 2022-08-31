@@ -11,9 +11,9 @@ var RegionComponents = {
     var region = _ref.region,
         iw = _ref.iw,
         ih = _ref.ih;
-    return React.createElement("g", {
+    return /*#__PURE__*/React.createElement("g", {
       transform: "translate(".concat(region.x * iw, " ").concat(region.y * ih, ")")
-    }, React.createElement("path", {
+    }, /*#__PURE__*/React.createElement("path", {
       d: "M0 8L8 0L0 -8L-8 0Z",
       strokeWidth: 2,
       stroke: region.color,
@@ -24,9 +24,9 @@ var RegionComponents = {
     var region = _ref2.region,
         iw = _ref2.iw,
         ih = _ref2.ih;
-    return React.createElement("g", {
+    return /*#__PURE__*/React.createElement("g", {
       transform: "translate(".concat(region.x1 * iw, " ").concat(region.y1 * ih, ")")
-    }, React.createElement("line", {
+    }, /*#__PURE__*/React.createElement("line", {
       strokeWidth: 2,
       x1: 0,
       y1: 0,
@@ -40,9 +40,9 @@ var RegionComponents = {
     var region = _ref3.region,
         iw = _ref3.iw,
         ih = _ref3.ih;
-    return React.createElement("g", {
+    return /*#__PURE__*/React.createElement("g", {
       transform: "translate(".concat(region.x * iw, " ").concat(region.y * ih, ")")
-    }, React.createElement("rect", {
+    }, /*#__PURE__*/React.createElement("rect", {
       strokeWidth: 2,
       x: 0,
       y: 0,
@@ -59,7 +59,7 @@ var RegionComponents = {
         fullSegmentationMode = _ref4.fullSegmentationMode;
     var Component = region.open ? "polyline" : "polygon";
     var alphaBase = fullSegmentationMode ? 0.5 : 1;
-    return React.createElement(Component, {
+    return /*#__PURE__*/React.createElement(Component, {
       points: region.points.map(function (_ref5) {
         var _ref6 = _slicedToArray(_ref5, 2),
             x = _ref6[0],
@@ -89,17 +89,17 @@ var RegionComponents = {
     var _keypointDefinitions$ = keypointDefinitions[keypointsDefinitionId],
         landmarks = _keypointDefinitions$.landmarks,
         connections = _keypointDefinitions$.connections;
-    return React.createElement("g", null, Object.entries(points).map(function (_ref8, i) {
+    return /*#__PURE__*/React.createElement("g", null, Object.entries(points).map(function (_ref8, i) {
       var _ref9 = _slicedToArray(_ref8, 2),
           keypointId = _ref9[0],
           _ref9$ = _ref9[1],
           x = _ref9$.x,
           y = _ref9$.y;
 
-      return React.createElement("g", {
+      return /*#__PURE__*/React.createElement("g", {
         key: i,
         transform: "translate(".concat(x * iw, " ").concat(y * ih, ")")
-      }, React.createElement("path", {
+      }, /*#__PURE__*/React.createElement("path", {
         d: "M0 8L8 0L0 -8L-8 0Z",
         strokeWidth: 2,
         stroke: landmarks[keypointId].color,
@@ -116,16 +116,16 @@ var RegionComponents = {
         x: (kp1.x + kp2.x) / 2,
         y: (kp1.y + kp2.y) / 2
       };
-      return React.createElement("g", {
+      return /*#__PURE__*/React.createElement("g", {
         key: "".concat(kp1.x, ",").concat(kp1.y, ".").concat(kp2.x, ",").concat(kp2.y)
-      }, React.createElement("line", {
+      }, /*#__PURE__*/React.createElement("line", {
         x1: kp1.x * iw,
         y1: kp1.y * ih,
         x2: midPoint.x * iw,
         y2: midPoint.y * ih,
         strokeWidth: 2,
         stroke: landmarks[kp1Id].color
-      }), React.createElement("line", {
+      }), /*#__PURE__*/React.createElement("line", {
         x1: kp2.x * iw,
         y1: kp2.y * ih,
         x2: midPoint.x * iw,
@@ -181,7 +181,7 @@ var RegionComponents = {
     }).asMutable();
     secondSection.reverse();
     var lastPoint = points.slice(-1)[0];
-    return React.createElement(React.Fragment, null, React.createElement("polygon", {
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("polygon", {
       points: firstSection.concat(region.candidatePoint ? [region.candidatePoint] : []).concat(secondSection).map(function (p) {
         return "".concat(p.x * iw, " ").concat(p.y * ih);
       }).join(" "),
@@ -192,10 +192,10 @@ var RegionComponents = {
       var x = _ref18.x,
           y = _ref18.y,
           angle = _ref18.angle;
-      return React.createElement("g", {
+      return /*#__PURE__*/React.createElement("g", {
         key: i,
         transform: "translate(".concat(x * iw, " ").concat(y * ih, ") rotate(").concat(-(angle || 0) * 180 / Math.PI, ")")
-      }, React.createElement("g", null, React.createElement("rect", {
+      }, /*#__PURE__*/React.createElement("g", null, /*#__PURE__*/React.createElement("rect", {
         x: -5,
         y: -5,
         width: 10,
@@ -204,7 +204,7 @@ var RegionComponents = {
         stroke: colorAlpha(region.color, 0.75),
         fill: colorAlpha(region.color, 0.25)
       })));
-    }), React.createElement("rect", {
+    }), /*#__PURE__*/React.createElement("rect", {
       x: lastPoint.x * iw - 8,
       y: lastPoint.y * ih - 8,
       width: 16,
@@ -226,10 +226,10 @@ export var WrappedRegionList = memo(function (_ref19) {
       fullSegmentationMode = _ref19.fullSegmentationMode;
   return regions.filter(function (r) {
     return r.visible !== false;
-  }).map(function (r) {
+  }).map(function (r, index) {
     var Component = RegionComponents[r.type];
-    return React.createElement(Component, {
-      key: r.regionId,
+    return /*#__PURE__*/React.createElement(Component, {
+      key: r.regionId || index,
       region: r,
       iw: iw,
       ih: ih,
@@ -250,7 +250,7 @@ export var RegionShapes = function RegionShapes(_ref20) {
   var iw = imagePosition.bottomRight.x - imagePosition.topLeft.x;
   var ih = imagePosition.bottomRight.y - imagePosition.topLeft.y;
   if (isNaN(iw) || isNaN(ih)) return null;
-  return React.createElement("svg", {
+  return /*#__PURE__*/React.createElement("svg", {
     width: iw,
     height: ih,
     style: {
@@ -262,7 +262,7 @@ export var RegionShapes = function RegionShapes(_ref20) {
       width: iw,
       height: ih
     }
-  }, React.createElement(WrappedRegionList, {
+  }, /*#__PURE__*/React.createElement(WrappedRegionList, {
     key: "wrapped-region-list",
     regions: regions,
     iw: iw,

@@ -54,6 +54,7 @@ export const RegionLabel = ({
     const commentInput = commentInputRef.current
     if (commentInput) return commentInput.focus()
   }
+  const SortData = [...allowedClasses].sort()
 
   return (
     <ThemeProvider theme={theme}>
@@ -85,7 +86,7 @@ export const RegionLabel = ({
             )}
           </div>
         ) : (
-          <div style={{ width: 200 }}>
+          <div>
             <div style={{ display: "flex", flexDirection: "row" }}>
               <div
                 style={{
@@ -113,7 +114,7 @@ export const RegionLabel = ({
                 <TrashIcon style={{ marginTop: -8, width: 16, height: 16 }} />
               </IconButton>
             </div>
-            {(allowedClasses || []).length > 0 && (
+            {(SortData || []).length > 0 && (
               <div style={{ marginTop: 6 }}>
                 <CreatableSelect
                   placeholder="Classification"
@@ -130,7 +131,7 @@ export const RegionLabel = ({
                     region.cls ? { label: region.cls, value: region.cls } : null
                   }
                   options={asMutable(
-                    allowedClasses.map((c) => ({ value: c, label: c }))
+                    SortData.map((c) => ({ value: c, label: c }))
                   )}
                 />
               </div>

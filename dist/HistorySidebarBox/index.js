@@ -32,7 +32,7 @@ export var HistorySidebarBox = function HistorySidebarBox(_ref) {
   var history = _ref.history,
       onRestoreHistory = _ref.onRestoreHistory;
   var classes = useStyles();
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
   });
 };

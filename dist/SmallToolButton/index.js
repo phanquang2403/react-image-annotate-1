@@ -19,10 +19,10 @@ export var SmallToolButton = function SmallToolButton(_ref) {
 
   if (!enabledTools.includes(id) && !alwaysShowing) return null;
   selected = selected || selectedTool === id;
-  return React.createElement(Tooltip, {
+  return /*#__PURE__*/React.createElement(Tooltip, {
     placement: "right",
     title: name
-  }, React.createElement("div", null, React.createElement(IconButton, {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(IconButton, {
     disabled: !togglable ? selected : undefined,
     "aria-label": name,
     onClick: function onClick() {

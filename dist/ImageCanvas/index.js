@@ -292,9 +292,9 @@ export var ImageCanvas = function ImageCanvas(_ref2) {
     if (highlightedRegions.length !== 1) return null;
     return highlightedRegions[0];
   }, [regions]);
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       width: "100%",
       height: "100%",
@@ -303,10 +303,10 @@ export var ImageCanvas = function ImageCanvas(_ref2) {
       overflow: "hidden",
       cursor: createWithPrimary ? "crosshair" : dragging ? "grabbing" : dragWithPrimary ? "grab" : zoomWithPrimary ? mat.a < 1 ? "zoom-out" : "zoom-in" : undefined
     }
-  }, showCrosshairs && React.createElement(Crosshairs, {
+  }, showCrosshairs && /*#__PURE__*/React.createElement(Crosshairs, {
     key: "crossHairs",
     mousePosition: mousePosition
-  }), imageLoaded && !dragging && React.createElement(RegionSelectAndTransformBoxes, {
+  }), imageLoaded && !dragging && /*#__PURE__*/React.createElement(RegionSelectAndTransformBoxes, {
     key: "regionSelectAndTransformBoxes",
     regions: !modifyingAllowedArea || !allowedArea ? regions : [{
       type: "box",
@@ -334,9 +334,9 @@ export var ImageCanvas = function ImageCanvas(_ref2) {
     onBeginMoveKeypoint: onBeginMoveKeypoint,
     onAddPolygonPoint: onAddPolygonPoint,
     showHighlightBox: showHighlightBox
-  }), imageLoaded && showTags && !dragging && React.createElement(PreventScrollToParents, {
+  }), imageLoaded && showTags && !dragging && /*#__PURE__*/React.createElement(PreventScrollToParents, {
     key: "regionTags"
-  }, React.createElement(RegionTags, {
+  }, /*#__PURE__*/React.createElement(RegionTags, {
     regions: regions,
     projectRegionBox: projectRegionBox,
     mouseEvents: mouseEvents,
@@ -351,10 +351,10 @@ export var ImageCanvas = function ImageCanvas(_ref2) {
     RegionEditLabel: RegionEditLabel,
     onRegionClassAdded: onRegionClassAdded,
     allowComments: allowComments
-  })), !showTags && highlightedRegion && React.createElement("div", {
+  })), !showTags && highlightedRegion && /*#__PURE__*/React.createElement("div", {
     key: "topLeftTag",
     className: classes.fixedRegionLabel
-  }, React.createElement(RegionLabel, {
+  }, /*#__PURE__*/React.createElement(RegionLabel, {
     disableClose: true,
     allowedClasses: regionClsList,
     allowedTags: regionTagList,
@@ -364,7 +364,7 @@ export var ImageCanvas = function ImageCanvas(_ref2) {
     region: highlightedRegion,
     imageSrc: imageSrc,
     allowComments: allowComments
-  })), zoomWithPrimary && zoomBox !== null && React.createElement("div", {
+  })), zoomWithPrimary && zoomBox !== null && /*#__PURE__*/React.createElement("div", {
     key: "zoomBox",
     style: {
       position: "absolute",
@@ -376,37 +376,37 @@ export var ImageCanvas = function ImageCanvas(_ref2) {
       width: zoomBox.w,
       height: zoomBox.h
     }
-  }), showPointDistances && React.createElement(PointDistances, {
+  }), showPointDistances && /*#__PURE__*/React.createElement(PointDistances, {
     key: "pointDistances",
     regions: regions,
     realSize: realSize,
     projectRegionBox: projectRegionBox,
     pointDistancePrecision: pointDistancePrecision
-  }), React.createElement(PreventScrollToParents, Object.assign({
+  }), /*#__PURE__*/React.createElement(PreventScrollToParents, Object.assign({
     style: {
       width: "100%",
       height: "100%"
     }
-  }, mouseEvents), React.createElement(React.Fragment, null, fullImageSegmentationMode && React.createElement(ImageMask, {
+  }, mouseEvents), /*#__PURE__*/React.createElement(React.Fragment, null, fullImageSegmentationMode && /*#__PURE__*/React.createElement(ImageMask, {
     hide: !showMask,
     autoSegmentationOptions: autoSegmentationOptions,
     imagePosition: imagePosition,
     regionClsList: regionClsList,
     imageSrc: imageSrc,
     regions: regions
-  }), React.createElement("canvas", {
+  }), /*#__PURE__*/React.createElement("canvas", {
     style: {
       opacity: 0.25
     },
     className: classes.canvas,
     ref: canvasEl
-  }), React.createElement(RegionShapes, {
+  }), /*#__PURE__*/React.createElement(RegionShapes, {
     mat: mat,
     keypointDefinitions: keypointDefinitions,
     imagePosition: imagePosition,
     regions: regions,
     fullSegmentationMode: fullImageSegmentationMode
-  }), React.createElement(VideoOrImageCanvasBackground, {
+  }), /*#__PURE__*/React.createElement(VideoOrImageCanvasBackground, {
     videoPlaying: videoPlaying,
     imagePosition: imagePosition,
     mouseEvents: mouseEvents,
@@ -417,7 +417,7 @@ export var ImageCanvas = function ImageCanvas(_ref2) {
     useCrossOrigin: fullImageSegmentationMode,
     onChangeVideoTime: onChangeVideoTime,
     onChangeVideoPlaying: onChangeVideoPlaying
-  }))), React.createElement("div", {
+  }))), /*#__PURE__*/React.createElement("div", {
     className: classes.zoomIndicator
   }, (1 / mat.a * 100).toFixed(0), "%")));
 };

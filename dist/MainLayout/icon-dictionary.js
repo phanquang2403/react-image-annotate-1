@@ -12,7 +12,7 @@ var faStyle = {
 };
 export var iconDictionary = {
   select: function select() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -20,7 +20,7 @@ export var iconDictionary = {
     });
   },
   pan: function pan() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -28,7 +28,7 @@ export var iconDictionary = {
     });
   },
   zoom: function zoom() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -36,7 +36,7 @@ export var iconDictionary = {
     });
   },
   "show-tags": function showTags() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -44,7 +44,7 @@ export var iconDictionary = {
     });
   },
   "create-point": function createPoint() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -52,7 +52,7 @@ export var iconDictionary = {
     });
   },
   "create-box": function createBox() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -60,7 +60,7 @@ export var iconDictionary = {
     });
   },
   "create-polygon": function createPolygon() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -68,7 +68,7 @@ export var iconDictionary = {
     });
   },
   "create-expanding-line": function createExpandingLine() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -76,7 +76,7 @@ export var iconDictionary = {
     });
   },
   "create-line": function createLine() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -84,7 +84,7 @@ export var iconDictionary = {
     });
   },
   "show-mask": function showMask() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -92,7 +92,7 @@ export var iconDictionary = {
     });
   },
   "modify-allowed-area": function modifyAllowedArea() {
-    return React.createElement(FontAwesomeIcon, {
+    return /*#__PURE__*/React.createElement(FontAwesomeIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,
@@ -100,7 +100,7 @@ export var iconDictionary = {
     });
   },
   "Save as Draft": function SaveAsDraft() {
-    return React.createElement(SaveAsIcon, {
+    return /*#__PURE__*/React.createElement(SaveAsIcon, {
       style: faStyle,
       size: "xs",
       fixedWidth: true,

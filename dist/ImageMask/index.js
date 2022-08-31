@@ -123,7 +123,7 @@ export var ImageMask = function ImageMask(_ref3) {
       pointerEvents: "none"
     };
   }, [imagePosition.topLeft.x, imagePosition.topLeft.y, imagePosition.bottomRight.x, imagePosition.bottomRight.y, zIndex, hide]);
-  return React.createElement("canvas", {
+  return /*#__PURE__*/React.createElement("canvas", {
     style: style,
     width: sampleImageData ? sampleImageData.width : 0,
     height: sampleImageData ? sampleImageData.height : 0,

@@ -1,5 +1,12 @@
 import _slicedToArray from "@babel/runtime/helpers/esm/slicedToArray";
 import _defineProperty from "@babel/runtime/helpers/esm/defineProperty";
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 import React, { useMemo, useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -109,17 +116,26 @@ var min = 60000;
 var displayIntervalPairs = [[50, 250], [100, 500], [250, 1000], [1000, 5000], [5000, 30000], [10000, min], [30000, min * 2], [min, min * 5], [min * 5, min * 30], [min * 10, min * 60], [min * 30, min * 60 * 3], [min * 60, min * 60 * 5]];
 
 var getMajorInterval = function getMajorInterval(duration) {
-  for (var _i = 0, _displayIntervalPairs = displayIntervalPairs; _i < _displayIntervalPairs.length; _i++) {
-    var _ref9 = _displayIntervalPairs[_i];
+  var _iterator = _createForOfIteratorHelper(displayIntervalPairs),
+      _step;
 
-    var _ref8 = _slicedToArray(_ref9, 2);
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var _ref9 = _step.value;
 
-    var minor = _ref8[0];
-    var major = _ref8[1];
+      var _ref8 = _slicedToArray(_ref9, 2);
 
-    if (duration / major < 6 && duration / major > 2) {
-      return [minor, major];
+      var minor = _ref8[0];
+      var major = _ref8[1];
+
+      if (duration / major < 6 && duration / major > 2) {
+        return [minor, major];
+      }
     }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
 
   return [duration / 4, duration];
@@ -182,20 +198,20 @@ export default (function (_ref10) {
   }); // TODO skeleton
 
   if (!duration) return null;
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(Container, {
+  }, /*#__PURE__*/React.createElement(Container, {
     onMouseMove: onMouseMove,
     onMouseUp: onMouseUp,
     ref: ref
   }, range(0, duration, majorInterval).map(function (a) {
-    return React.createElement(React.Fragment, null, React.createElement(Tick, {
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Tick, {
       key: a,
       style: {
         left: a / duration * bounds.width,
         height: "50%"
       }
-    }), React.createElement(TickText, {
+    }), /*#__PURE__*/React.createElement(TickText, {
       style: {
         left: a / duration * bounds.width + 8,
         bottom: "calc(50% - 12px)"
@@ -204,7 +220,7 @@ export default (function (_ref10) {
   }), range(0, duration, minorInterval).filter(function (a) {
     return !Number.isInteger(a / majorInterval);
   }).map(function (a) {
-    return React.createElement(Tick, {
+    return /*#__PURE__*/React.createElement(Tick, {
       key: a,
       style: {
         left: a / duration * bounds.width,
@@ -212,7 +228,7 @@ export default (function (_ref10) {
       }
     });
   }), keyframeTimes.map(function (kt) {
-    return React.createElement(KeyframeMarker, {
+    return /*#__PURE__*/React.createElement(KeyframeMarker, {
       onClick: function onClick() {
         return onChangeCurrentTime(kt);
       },
@@ -221,7 +237,7 @@ export default (function (_ref10) {
         left: kt / duration * bounds.width
       }
     });
-  }), React.createElement(PositionCursor, {
+  }), /*#__PURE__*/React.createElement(PositionCursor, {
     onMouseDown: function onMouseDown(e) {
       return changeDraggingTime(true);
     },

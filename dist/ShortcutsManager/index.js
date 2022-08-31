@@ -52,14 +52,14 @@ export var defaultHotkeys = [{
 export var defaultKeyMap = {};
 
 for (var _i = 0, _defaultHotkeys = defaultHotkeys; _i < _defaultHotkeys.length; _i++) {
-  var _ref4 = _defaultHotkeys[_i];
-  var id = _ref4.id;
-  var binding = _ref4.binding;
+  var _ref2 = _defaultHotkeys[_i];
+  var id = _ref2.id;
+  var binding = _ref2.binding;
   defaultKeyMap[id] = binding;
 }
 
-export var useDispatchHotkeyHandlers = function useDispatchHotkeyHandlers(_ref2) {
-  var dispatch = _ref2.dispatch;
+export var useDispatchHotkeyHandlers = function useDispatchHotkeyHandlers(_ref3) {
+  var dispatch = _ref3.dispatch;
   var handlers = useMemo(function () {
     return {
       select_tool: function select_tool() {
@@ -142,13 +142,13 @@ export var useDispatchHotkeyHandlers = function useDispatchHotkeyHandlers(_ref2)
   }, [dispatch]);
   return handlers;
 };
-export default (function (_ref3) {
-  var children = _ref3.children,
-      dispatch = _ref3.dispatch;
+export default (function (_ref4) {
+  var children = _ref4.children,
+      dispatch = _ref4.dispatch;
   var handlers = useDispatchHotkeyHandlers({
     dispatch: dispatch
   });
-  return React.createElement(HotKeys, {
+  return /*#__PURE__*/React.createElement(HotKeys, {
     allowChanges: true,
     handlers: handlers
   }, children);

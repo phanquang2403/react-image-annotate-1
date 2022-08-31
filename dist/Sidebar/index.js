@@ -36,30 +36,30 @@ export var Sidebar = function Sidebar(_ref2) {
       onDeleteKeyframe = _ref2.onDeleteKeyframe,
       onShortcutActionDispatched = _ref2.onShortcutActionDispatched;
   if (!regions) regions = emptyArr;
-  return React.createElement(ThemeProvider, {
+  return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
-  }, React.createElement(Container, null, debug && React.createElement(DebugBox, {
+  }, /*#__PURE__*/React.createElement(Container, null, debug && /*#__PURE__*/React.createElement(DebugBox, {
     state: debug,
     lastAction: debug.lastAction
-  }), taskDescription && (taskDescription || "").length > 1 && React.createElement(TaskDescription, {
+  }), taskDescription && (taskDescription || "").length > 1 && /*#__PURE__*/React.createElement(TaskDescription, {
     description: taskDescription
-  }), labelImages && React.createElement(TagsSidebarBox, {
+  }), labelImages && /*#__PURE__*/React.createElement(TagsSidebarBox, {
     currentImage: currentImage,
     imageClsList: imageClsList,
     imageTagList: imageTagList,
     onChangeImage: onChangeImage,
     expandedByDefault: true
-  }), React.createElement(RegionSelector, {
+  }), /*#__PURE__*/React.createElement(RegionSelector, {
     regions: regions,
     onSelectRegion: onSelectRegion,
     onChangeRegion: onChangeRegion,
     onDeleteRegion: onDeleteRegion
-  }), keyframes && React.createElement(KeyframesSelector, {
+  }), keyframes && /*#__PURE__*/React.createElement(KeyframesSelector, {
     currentVideoTime: currentVideoTime,
     keyframes: keyframes,
     onChangeVideoTime: onChangeVideoTime,
     onDeleteKeyframe: onDeleteKeyframe
-  }), React.createElement(History, {
+  }), /*#__PURE__*/React.createElement(History, {
     history: history,
     onRestoreHistory: function onRestoreHistory() {
       return _onRestoreHistory();
