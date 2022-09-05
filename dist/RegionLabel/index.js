@@ -40,6 +40,8 @@ export var RegionLabel = function RegionLabel(_ref) {
 
   var SortData = _toConsumableArray(allowedClasses).sort();
 
+  var SortDataTag = _toConsumableArray(allowedTags).sort();
+
   return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
   }, /*#__PURE__*/React.createElement(Paper, {
@@ -126,7 +128,7 @@ export var RegionLabel = function RegionLabel(_ref) {
         label: c
       };
     }))
-  })), (allowedTags || []).length > 0 && /*#__PURE__*/React.createElement("div", {
+  })), (SortDataTag || []).length > 0 && /*#__PURE__*/React.createElement("div", {
     style: {
       marginTop: 4
     }
@@ -146,7 +148,7 @@ export var RegionLabel = function RegionLabel(_ref) {
       };
     }),
     isMulti: true,
-    options: asMutable(allowedTags.map(function (c) {
+    options: asMutable(SortDataTag.map(function (c) {
       return {
         value: c,
         label: c

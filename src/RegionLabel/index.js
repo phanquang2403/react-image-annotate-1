@@ -55,6 +55,7 @@ export const RegionLabel = ({
     if (commentInput) return commentInput.focus()
   }
   const SortData = [...allowedClasses].sort()
+  const SortDataTag = [...allowedTags].sort();
 
   return (
     <ThemeProvider theme={theme}>
@@ -136,7 +137,7 @@ export const RegionLabel = ({
                 />
               </div>
             )}
-            {(allowedTags || []).length > 0 && (
+            {(SortDataTag || []).length > 0 && (
               <div style={{ marginTop: 4 }}>
                 <Select
                   onChange={(newTags) =>
@@ -152,7 +153,7 @@ export const RegionLabel = ({
                   }))}
                   isMulti
                   options={asMutable(
-                    allowedTags.map((c) => ({ value: c, label: c }))
+                    SortDataTag.map((c) => ({ value: c, label: c }))
                   )}
                 />
               </div>
