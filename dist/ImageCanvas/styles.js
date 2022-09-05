@@ -23,6 +23,7 @@ export default {
     top: 10,
     left: 10,
     opacity: 0.5,
+    width: 500,
     transition: "opacity 500ms",
     "&:hover": {
       opacity: 1
