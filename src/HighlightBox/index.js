@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     "& path": {
       vectorEffect: "non-scaling-stroke",
       strokeWidth: 2,
-      stroke: "#FFF",
+      stroke: "#00BCA7",
       fill: "none",
       strokeDasharray: 5,
       animationName: "$borderDance",

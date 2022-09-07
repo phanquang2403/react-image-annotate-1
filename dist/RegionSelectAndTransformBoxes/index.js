@@ -12,7 +12,7 @@ var TransformGrabber = styled("div")(function (_ref) {
     width: 8,
     height: 8,
     zIndex: 2,
-    border: "2px solid #FFF",
+    border: "2px solid #00BCA7",
     position: "absolute"
   };
 });
