@@ -343,7 +343,14 @@ export var MainLayout = function MainLayout(_ref3) {
       regions: activeImage ? activeImage.regions : emptyArr,
       onSelectRegion: action("SELECT_REGION", "region"),
       onDeleteRegion: action("DELETE_REGION", "region"),
-      onChangeRegion: action("CHANGE_REGION", "region")
+      onChangeRegion: action("CHANGE_REGION", "region"),
+      isLabeled: false
+    }), /*#__PURE__*/React.createElement(RegionSelector, {
+      regions: activeImage ? activeImage.regions : emptyArr,
+      onSelectRegion: action("SELECT_REGION", "region"),
+      onDeleteRegion: action("DELETE_REGION", "region"),
+      onChangeRegion: action("CHANGE_REGION", "region"),
+      isLabeled: true
     }), state.keyframes && /*#__PURE__*/React.createElement(KeyframesSelector, {
       onChangeVideoTime: action("CHANGE_VIDEO_TIME", "newTime"),
       onDeleteKeyframe: action("DELETE_KEYFRAME", "time"),

@@ -390,6 +390,14 @@ return (
                 onSelectRegion={action("SELECT_REGION", "region")}
                 onDeleteRegion={action("DELETE_REGION", "region")}
                 onChangeRegion={action("CHANGE_REGION", "region")}
+                isLabeled={false}
+              />,
+              <RegionSelector
+                regions={activeImage ? activeImage.regions : emptyArr}
+                onSelectRegion={action("SELECT_REGION", "region")}
+                onDeleteRegion={action("DELETE_REGION", "region")}
+                onChangeRegion={action("CHANGE_REGION", "region")}
+                isLabeled={true}
               />,
               state.keyframes && (
                 <KeyframesSelector

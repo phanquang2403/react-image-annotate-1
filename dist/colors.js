@@ -1,5 +1,5 @@
 import * as muiColors from "@mui/material/colors";
-export var colors = [muiColors.red[500], muiColors.blue[500], muiColors.green[500], muiColors.orange[800], muiColors.brown[500], muiColors.lightGreen[700], muiColors.pink[500], muiColors.purple[500], muiColors.indigo[500], muiColors.teal[500], muiColors.lime[500], muiColors.blueGrey[500]];
+export var colors = [muiColors.cyan[500], muiColors.blue[500], muiColors.green[500], muiColors.orange[800], muiColors.brown[500], muiColors.lightGreen[700], muiColors.pink[500], muiColors.purple[500], muiColors.indigo[500], muiColors.teal[500], muiColors.lime[500], muiColors.blueGrey[500]];
 var transparency = 0x88000000;
 
 function reverseParseColor(rrggbb) {

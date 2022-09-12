@@ -1,6 +1,6 @@
 import _objectSpread from "@babel/runtime/helpers/esm/objectSpread";
 import _slicedToArray from "@babel/runtime/helpers/esm/slicedToArray";
-import React, { Fragment, useState, memo } from "react";
+import React, { Fragment, useState, memo, useEffect } from "react";
 import SidebarBoxContainer from "../SidebarBoxContainer";
 import { makeStyles } from "@mui/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -216,12 +216,28 @@ export var RegionSelectorSidebarBox = function RegionSelectorSidebarBox(_ref5) {
       regions = _ref5$regions === void 0 ? emptyArr : _ref5$regions,
       onDeleteRegion = _ref5.onDeleteRegion,
       onChangeRegion = _ref5.onChangeRegion,
-      onSelectRegion = _ref5.onSelectRegion;
+      onSelectRegion = _ref5.onSelectRegion,
+      isLabeled = _ref5.isLabeled;
+
+  var _useState3 = useState(regions),
+      _useState4 = _slicedToArray(_useState3, 2),
+      data = _useState4[0],
+      setData = _useState4[1];
+
   var classes = useStyles();
+  useEffect(function () {
+    setData(regions.filter(function (item) {
+      if (isLabeled) {
+        return item.cls !== undefined && item.cls !== '';
+      } else {
+        return item.cls === undefined || item.cls === '';
+      }
+    }));
+  }, [regions]);
   return /*#__PURE__*/React.createElement(ThemeProvider, {
     theme: theme
   }, /*#__PURE__*/React.createElement(SidebarBoxContainer, {
-    title: "Boxes list",
+    title: isLabeled ? "Labeled Boxes" : "Un-labeled Boxes",
     subTitle: "",
     icon: /*#__PURE__*/React.createElement(RegionIcon, {
       style: {
@@ -231,7 +247,7 @@ export var RegionSelectorSidebarBox = function RegionSelectorSidebarBox(_ref5) {
     expandedByDefault: true
   }, /*#__PURE__*/React.createElement("div", {
     className: classes.container
-  }, /*#__PURE__*/React.createElement(MemoRowHeader, null), /*#__PURE__*/React.createElement(HeaderSep, null), regions.map(function (r, i) {
+  }, /*#__PURE__*/React.createElement(MemoRowHeader, null), /*#__PURE__*/React.createElement(HeaderSep, null), data.map(function (r, i) {
     return /*#__PURE__*/React.createElement(MemoRow, Object.assign({
       key: r.id
     }, r, {

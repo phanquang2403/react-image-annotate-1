@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Fragment, useState, memo } from "react"
+import React, { Fragment, useState, memo, useEffect } from "react"
 import SidebarBoxContainer from "../SidebarBoxContainer"
 import { makeStyles } from "@mui/styles"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
@@ -32,8 +32,8 @@ const HeaderSep = styled("div")(({ theme }) => ({
 const Chip = ({ color, text }) => {
   const classes = useStyles()
   return (
-    <div style={{display:'flex'}}>
-      <SellIcon style={{ color: color ,marginRight:5}}  fontSize={'inherit'}/>
+    <div style={{ display: 'flex' }}>
+      <SellIcon style={{ color: color, marginRight: 5 }} fontSize={'inherit'} />
       <div className="text">{text}</div>
     </div>
   )
@@ -172,12 +172,28 @@ export const RegionSelectorSidebarBox = ({
   onDeleteRegion,
   onChangeRegion,
   onSelectRegion,
+  isLabeled
 }) => {
+  const [data, setData] = useState(regions)
   const classes = useStyles()
+
+  useEffect(() => {
+    setData(
+      regions.filter(item => {
+        if (isLabeled) {
+          return item.cls !== undefined && item.cls !== ''
+        } else {
+          return item.cls === undefined || item.cls === ''
+        }
+      }
+      )
+    )
+  }, [regions])
+
   return (
     <ThemeProvider theme={theme}>
       <SidebarBoxContainer
-        title="Boxes list"
+        title={isLabeled ? "Labeled Boxes" : "Un-labeled Boxes"}
         subTitle=""
         icon={<RegionIcon style={{ color: grey[700] }} />}
         expandedByDefault
@@ -185,7 +201,7 @@ export const RegionSelectorSidebarBox = ({
         <div className={classes.container}>
           <MemoRowHeader />
           <HeaderSep />
-          {regions.map((r, i) => (
+          {data.map((r, i) => (
             <MemoRow
               key={r.id}
               {...r}
