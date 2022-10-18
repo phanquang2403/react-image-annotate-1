@@ -29,8 +29,9 @@ import useKey from "use-key-hook";
 import { useSettings } from "../SettingsProvider";
 import { withHotKeys } from "react-hotkeys";
 import DocumentTypesSideBarBox from "../DocumentTypesSideBarBox";
-import SaveAsIcon from '@mui/icons-material/SaveAs'; // import Fullscreen from "../Fullscreen"
+import SaveAsIcon from "@mui/icons-material/SaveAs"; // import Fullscreen from "../Fullscreen"
 
+import WidthNormalIcon from "@mui/icons-material/WidthNormal";
 var emptyArr = [];
 var theme = createTheme();
 var useStyles = makeStyles(function (theme) {
@@ -67,6 +68,7 @@ export var MainLayout = function MainLayout(_ref3) {
       RegionEditLabel = _ref3.RegionEditLabel,
       onRegionClassAdded = _ref3.onRegionClassAdded,
       onSelectDocumentTypes = _ref3.onSelectDocumentTypes,
+      onWithdraw = _ref3.onWithdraw,
       documentTypes = _ref3.documentTypes,
       currentDocumentType = _ref3.currentDocumentType,
       labeList = _ref3.labeList,
@@ -78,6 +80,8 @@ export var MainLayout = function MainLayout(_ref3) {
       hidePrev = _ref3$hidePrev === void 0 ? false : _ref3$hidePrev,
       _ref3$hideClone = _ref3.hideClone,
       hideClone = _ref3$hideClone === void 0 ? false : _ref3$hideClone,
+      _ref3$hideWithdraw = _ref3.hideWithdraw,
+      hideWithdraw = _ref3$hideWithdraw === void 0 ? false : _ref3$hideWithdraw,
       _ref3$hideSettings = _ref3.hideSettings,
       hideSettings = _ref3$hideSettings === void 0 ? false : _ref3$hideSettings,
       _ref3$hideFullScreen = _ref3.hideFullScreen,
@@ -247,8 +251,11 @@ export var MainLayout = function MainLayout(_ref3) {
     }, !hideNext && {
       name: "Next"
     }, !hideSave && {
-      name: 'Save as Draft',
+      name: "Save as Draft",
       icon: /*#__PURE__*/React.createElement(SaveAsIcon, null)
+    }, !hideWithdraw && {
+      name: "Withdraw",
+      icon: /*#__PURE__*/React.createElement(WidthNormalIcon, null)
     }, state.annotationType !== "video" ? null : !state.videoPlaying ? {
       name: "Play"
     } : {
@@ -318,7 +325,7 @@ export var MainLayout = function MainLayout(_ref3) {
       description: state.taskDescription
     }), /*#__PURE__*/React.createElement(DocumentTypesSideBarBox, {
       initalState: state,
-      documentTypes: documentTypes || ['Doc type 1', 'Doc type 2'],
+      documentTypes: documentTypes || ["Doc type 1", "Doc type 2"],
       onSelectDocumentTypes: onSelectDocumentTypes,
       currentDocumentType: currentDocumentType
     }), state.regionClsList && /*#__PURE__*/React.createElement(ClassSelectionMenu, {

@@ -46,6 +46,7 @@ export var Annotator = function Annotator(_ref) {
       onExit = _ref.onExit,
       onSelectDocumentTypes = _ref.onSelectDocumentTypes,
       onSaveAsDraf = _ref.onSaveAsDraf,
+      onWithdraw = _ref.onWithdraw,
       labeList = _ref.labeList,
       currentDocumentType = _ref.currentDocumentType,
       documentTypes = _ref.documentTypes,
@@ -112,10 +113,12 @@ export var Annotator = function Annotator(_ref) {
 
   var dispatch = useEventCallback(function (action) {
     if (action.type === "HEADER_BUTTON_CLICKED") {
-      if (["Exit", "Done", "Save", "Complete", "Done"].includes(action.buttonName)) {
+      if (["Exit", "Done", "Save", "Complete"].includes(action.buttonName)) {
         return onExit(without(state, "history"));
       } else if (action.buttonName === "Save as Draft") {
         return onSaveAsDraf(without(state, "history"));
+      } else if (action.buttonName === "Withdraw") {
+        return onWithdraw(without(state, "history"));
       } else if (action.buttonName === "Next" && onNextImage) {
         return onNextImage(without(state, "history"));
       } else if (action.buttonName === "Prev" && onPrevImage) {
@@ -158,6 +161,7 @@ export var Annotator = function Annotator(_ref) {
     labeList: labeList,
     documentTypes: documentTypes,
     currentDocumentType: currentDocumentType,
+    onWithdraw: onWithdraw,
     onSelectDocumentTypes: onSelectDocumentTypes
   }));
 };

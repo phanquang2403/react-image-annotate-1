@@ -39,6 +39,7 @@ type Props = {
   onExit: (MainLayoutState) => any,
   onSelectDocumentTypes: (type: string) => any,
   onSaveAsDraf: (e: any) => any,
+  onWithdraw: (e: any) => any,
   currentDocumentType: any,
   documentTypes: any,
   labeList: Array<string>,
@@ -49,16 +50,16 @@ type Props = {
   keypointDefinitions: KeypointsDefinition,
   fullImageSegmentationMode?: boolean,
   autoSegmentationOptions?:
-  | {| type: "simple" |}
-    | {| type: "autoseg", maxClusters ?: number, slicWeightFactor ?: number |},
-hideHeader ?: boolean,
-  hideHeaderText ?: boolean,
-  hideNext ?: boolean,
-  hidePrev ?: boolean,
-  hideClone ?: boolean,
-  hideSettings ?: boolean,
-  hideFullScreen ?: boolean,
-  hideSave ?: boolean,
+    | {| type: "simple" |}
+    | {| type: "autoseg", maxClusters?: number, slicWeightFactor?: number |},
+  hideHeader?: boolean,
+  hideHeaderText?: boolean,
+  hideNext?: boolean,
+  hidePrev?: boolean,
+  hideClone?: boolean,
+  hideSettings?: boolean,
+  hideFullScreen?: boolean,
+  hideSave?: boolean,
 }
 
 export const Annotator = ({
@@ -92,6 +93,7 @@ export const Annotator = ({
   onExit,
   onSelectDocumentTypes,
   onSaveAsDraf,
+  onWithdraw,
   labeList,
   currentDocumentType,
   documentTypes,
@@ -146,27 +148,27 @@ export const Annotator = ({
       allowComments,
       ...(annotationType === "image"
         ? {
-          selectedImage,
-          images,
-          selectedImageFrameTime:
-            images && images.length > 0 ? images[0].frameTime : undefined,
-        }
+            selectedImage,
+            images,
+            selectedImageFrameTime:
+              images && images.length > 0 ? images[0].frameTime : undefined,
+          }
         : {
-          videoSrc,
-          keyframes,
-        }),
+            videoSrc,
+            keyframes,
+          }),
     })
   )
 
   const dispatch = useEventCallback((action: Action) => {
     if (action.type === "HEADER_BUTTON_CLICKED") {
-      if (["Exit", "Done", "Save", "Complete", "Done"].includes(action.buttonName)) {
+      if (["Exit", "Done", "Save", "Complete"].includes(action.buttonName)) {
         return onExit(without(state, "history"))
-      }
-      else if (action.buttonName === "Save as Draft") {
+      } else if (action.buttonName === "Save as Draft") {
         return onSaveAsDraf(without(state, "history"))
-      }
-      else if (action.buttonName === "Next" && onNextImage) {
+      } else if (action.buttonName === "Withdraw") {
+        return onWithdraw(without(state, "history"))
+      } else if (action.buttonName === "Next" && onNextImage) {
         return onNextImage(without(state, "history"))
       } else if (action.buttonName === "Prev" && onPrevImage) {
         return onPrevImage(without(state, "history"))
@@ -214,6 +216,7 @@ export const Annotator = ({
         labeList={labeList}
         documentTypes={documentTypes}
         currentDocumentType={currentDocumentType}
+        onWithdraw={onWithdraw}
         onSelectDocumentTypes={onSelectDocumentTypes}
       />
     </SettingsProvider>
